@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Invent a New world!</title>
+</head>
+<body>
+<p><a href="../index.html">[index]</a></p>
+<div id="display"></div>
+<p>
+いろんな国の言葉で新しい世界に挨拶をしましょう<br />
+<select onchange="changeGreeting();" id="greeting">
+<option />
+<option value="1">日本語</option>
+<option value="2">英語</option>
+<option value="3">スペイン語</option    >
+</select>
+</p>
+<div id="clone"></div>
+</body>
+<script type="text/javascript">
+
+function changeGreeting() {
+	var display_box = document.getElementById('display');
+	var clone_display_box = display_box;
+	var select_box = document.getElementById('greeting');
+	if (select_box.value == '1') {
+		display_box.innerText = 'こんにちは新しい世界!';
+	} else if (select_box.value == '3') {
+		display_box.innerText = 'Hola El Mundo Nuevo!';
+	} else {
+		display_box.innerText = 'Hello New World!';
+	}
+	// document.getElementById('clone').innerText = clone_display_box.innerText;
+}
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./luckycolor.js"></script>
+    <script type="text/javascript" src="../jquery-3.6.1.min.js"></script>
+    <script src="../jquery-linedtextarea.js"></script>
+    <link href="../jquery-linedtextarea.css" rel="stylesheet"/>
+    <script>
+      $(function(){
+        // const bodyOut = document.getElementById("body");
+        // const bodyContent = document.getElementsByTagName("body");
+        // bodyOut.innerHTML = bodyContent[0].innerHTML;
+        $(".lined").linedtextarea({
+          selectedLine: 1
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header><a href="../index.html">&lt; 最初に戻る</a></header>
+    <div id="panel" style="margin-top: 10px">
+      <!-- 背景色設定する場所 -->
+      <div id="result" style="font-size: 2rem; width: 320px; height: 420px; text-align: center; border: solid 1px;" >
+      </div>
+      <!-- ラッキーカラーを取得するためのボタン -->
+      <button id="get-color" onclick="getLuckyColor()">ボーダー色作成?</button>
+    </div>
+
+    <div style="margin-top: 10px">
+      以下のプログラムを「luckycolor.js」に書いてみましょう。<br />
+      <p>
+        <textarea class="lined" readonly style="width: 700px; height: 800px;">
+// クリック回数
+let term = 0;
+// クリック回数上限
+const maxTerm = 20;
+// 取得した値の最大値からランダムな整数を返します
+const getRandomInt = (max) => {
+    return Math.floor(Math.random() * max);
+}
+// 色名を配列に格納します
+// const colorName = ["青", "緑", "赤", "灰色", "紫", "ピンク"];
+// 色を配列に格納します (要素数は色名と同じ数にしてください。)
+// 色のコードは以下のサイトで確認できます。
+// https://www.colordic.org/
+const color = ["blue", "green", "red", "gray", "purple", "pink"];
+// 横縞カラー出力
+const getLuckyColor = () => {
+    // 色を出力するパネルを取得します
+    const panel = document.getElementById("result");
+    // 上限になったらクリック回数を初期化する
+    if (term === maxTerm) {
+        alert("クリック回数を初期化します。");
+        term = 0;
+        // パネルの中身を消す
+        panel.innerHTML = "";
+        panel.textContent = "初期化しました";
+        return;
+    }
+    term++;
+    // 領域内に出力するhtml
+    let elements = "";
+    // 前の色番号
+    let preColor = 0;
+    for (let i = 0; i <  6 * 14; i++) {
+        // 今回取得する色の番号を取得します。
+        const temp = getRandomInt(color.length);
+        // 前の色と同じ場合はスキップする。
+        if (temp === preColor) {
+            console.log("Skip!!!!!");
+            // 繰り返しを回数を元に戻す
+            i--;
+            // 次の繰り返しへスキップする
+            continue;
+        }
+        // 前の色番号を代入する
+        preColor = temp;
+        // 今回の色番号を出力
+        console.log(temp);
+        // htmlの要素を追加する。
+        elements += '<div style="width: 100%; background:' + color[temp] + '; height:  5px;"></div>'
+    }
+    // パネルの中にhtmlを追加
+    panel.innerHTML = elements;
+
+}
+        </textarea>
+      </p>
+      <div><button onclick="location.reload();">再描画</button></div>
+      プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+      このプログラムは配列に格納した色をランダムで取り出して画面に並べていきます。<br />
+      同じ色が重ならないように前の色と今回の色が同じ色の場合は繰り返しの処理をスキップします。<br />
+      関数「getRandomInt」では0から配列の要素数から任意の数値を取り出しています。<br />
+      getRandomIntで取得した場所の配列の要素にある色をボーダーの一つとして構成します。<br />
+      繰り返しの処理でボーダーとして設定する領域を作っていきます。<br />
+      繰り返しが終わったら、ボーダーを表示します。<br />
+      クリック回数の上限になったら、警告を出して表示領域を初期化します。<br />
+      <b>ボーダーにいろんな色を追加してみよう。</b>
+    </div>
+  </body>
+</html>
+

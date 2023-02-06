@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="../jquery-3.6.1.min.js"></script>
+    <script src="../jquery-linedtextarea.js"></script>
+    <link href="../jquery-linedtextarea.css" rel="stylesheet"/>
+    <script>
+      $(function(){
+        // const bodyOut = document.getElementById("body");
+        // const bodyContent = document.getElementsByTagName("body");
+        // bodyOut.innerHTML = bodyContent[0].innerHTML;
+        $(".lined").linedtextarea({
+          selectedLine: 1
+        });
+      });
+    </script>
+    <script src="./for.js"></script>
+  </head>
+  <body>
+    <header><a href="../index.html">&lt; 最初に戻る</a></header>
+    <div>
+      <h2>繰り返し処理</h2>
+      <p></p>
+    </div>
+    <div><button onclick="location.reload();">再描画</button></div>
+    <div style="margin-top: 30px">
+      ここでは繰り返しの処理をして、その結果をコンソールと画面に表示します。<br />
+      <p>
+        <h3>コンソールプログラム</h3>
+        <h4>指定した回数を繰り返す</h4>
+        <div>
+          以下のプログラムを「for.js」に書いてみましょう。<br />
+          <p>
+            <textarea class="lined" readonly style="width: 600px; height: 80px;">
+// 1から10までを繰り返して表示します。
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+// iは繰り返しから脱出すると使えません。
+            </textarea>
+          </p>
+          <div><button onclick="location.reload();">再描画</button></div>
+          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          1から10まで繰り返して値が表示されましたか?<br />
+          このプログラムでは1から10回繰り返し処理を続けます。<br />
+          プログラムとしては1からスタートして10以下の間繰り返すことになります。<br />
+        </div>
+        <h4>条件が満たされている場合は繰り返す while(条件)</h4>
+        <div>
+          以下のプログラムを「for.js」に書いてみましょう。<br />
+          <p>
+            <textarea class="lined" readonly style="width: 600px; height: 150px;">
+const unit = 3;
+let number = 48;
+console.log("在庫数: " + number)
+while (number > 0) {
+  number -= unit;
+  console.log("残り在庫数は" + number);
+  console.log("まだ処理は止まりません。")
+}
+console.log("処理が終了しました。");
+console.log("最後に残ったのは" + number);
+            </textarea>
+          </p>
+          <div><button onclick="location.reload();">再描画</button></div>
+          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          残りの在庫数が0になるまで表示されましたか?<br />
+          このプログラムでは在庫が残っている間は(numberが0になるまで)繰り返し処理を続けます。<br />
+          在庫は毎回3つずつ減っていきます。。<br />
+          在庫が０になった時点で繰り返しを停止して、処理が終わります。<br />
+        </div>
+        <h4>条件が満たされている場合は繰り返す do ... while(条件)</h4>
+        <div>
+          以下のプログラムを「for.js」に書いてみましょう。<br />
+          <p>
+            <textarea class="lined" readonly style="width: 600px; height: 150px;">
+const unit = 3;
+let number = 48;
+console.log("在庫数: " + number)
+do {
+  number -= unit;
+  console.log("残り在庫数は" + number);
+  console.log("まだ処理は止まりません。")
+} while (number > 0);
+console.log("処理が終了しました。");
+console.log("最後に残ったのは" + number);
+            </textarea>
+          </p>
+          <div><button onclick="location.reload();">再描画</button></div>
+          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          残りの在庫数が0になるまで表示されましたか?<br />
+          このプログラムでは在庫が残っている間は(numberが0になるまで)繰り返し処理を続けます。<br />
+          在庫は毎回3つずつ減っていきます。<br />
+          在庫が０になった時点で繰り返しを停止して、処理が終わります。<br />
+          while(条件)から始まる処理とパッと見変わりませんが、こちらは処理をした後に条件の判定をいたします。<br />
+          numberの値に0を代入した場合の処理を比較してみてください。
+          <p>
+            <textarea class="lined" readonly style="width: 600px; height: 350px;">
+console.log("########## while スタート ############")
+const unit1 = 3;
+let number1 = 0;
+console.log("在庫数: " + number1)
+while (number1 > 0) {
+  number1 -= unit1;
+  console.log("残り在庫数は" + number1);
+  console.log("まだ処理は止まりません。")
+}
+console.log("処理が終了しました。");
+console.log("最後に残ったのは" + number1);
+
+console.log("########## do while スタート ############")
+const unit2 = 3;
+let number2 = 0;
+console.log("在庫数: " + number2)
+do {
+  number2 -= unit2;
+  console.log("残り在庫数は" + number2);
+  console.log("まだ処理は止まりません。")
+} while (number2 > 0);
+console.log("処理が終了しました。");
+console.log("最後に残ったのは" + number2);
+            </textarea>
+          </p>
+          <div><button onclick="location.reload();">再描画</button></div>
+          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          do~whileを使った場合は処理の後0ではなく-3になっていますね。<br />
+          whileの条件判定する前にdoで一度在庫を減らす処理を実行してしまっているからです。
+        </div>
+        <div>
+          <h4>whileを使って指定した回数を繰り返す</h4>
+          <p>
+            <textarea class="lined" readonly style="width: 600px; height: 100px;">
+// 1から10までを繰り返して表示します。
+let number = 1;
+while (number < 10) {
+  console.log(number++);
+}
+console.log(number);
+            </textarea>
+          </p>
+          <div><button onclick="location.reload();">再描画</button></div>
+          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          このプログラムは一番最初に書いたforの処理をwhileを使ってやってみました。<br />
+          forで10回繰り返す処理で使用している変数iはfor (...) に続く { } の中だけで有効なため <br />
+          外部の処理への影響が出ません。<br />
+          whileの場合は繰り返す回数を判断する変数をwhileの処理の外側で宣言する必要があるので<br />
+          外部から何からの影響を受ける可能性があります。<br />
+          と言っても、使い方次第ですが、両者とも同じ処理はできることに違いないです。<br />
+          繰り返しの処理に使用する変数をその処理の外で使う場合はwhileを使用した方が良いでしょう。<br />
+        </div>
+      </p>
+      <p>
+        <h3>画面表示</h3>
+
+        <div>
+          以下のプログラムを「for.js」に書いてみましょう。<br />
+          <p>
+            <textarea class="lined" readonly style="width: 600px; height: 160px;">
+// 2. 画面に実行結果を表示します。
+const execute = () => {
+    let outputValue = ""
+    for (let i = 1; i <= 20; i++) {
+      outputValue += i + "番目を表示します。\n"
+    }
+    const target = document.getElementById("output");
+    target.textContent = outputValue;
+}
+// ブラウザ上でidがoutputという場所に代入された値を出力します。
+          </textarea>
+          </p>
+          <div><button onclick="location.reload();">再描画</button></div>
+          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div style="margin-top: 10px;">
+            <button onclick="execute()">プログラム実行!</button>
+            <pre>
+              <div id="output" style="font-size: 1.5rem">初期状態</div>
+            </pre>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br />
+          ボタンをクリックしたら繰り返し代入された値が表示されましたか?<br />
+          ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
+          これはボタンをクリックした時にfor.jsに書かれている「execute」と言う関数を実行してくださいと命令しています。<br />
+          (関数については別途説明いたします。)<br />
+          1から20まで繰り返して代入した値を<br />
+          関数executeでは&lt;div id="output"&gt;&lt;/div&gt;に表示しています。<br />
+          \nは改行を意味するコードでこの値を設定することによりこの後の文字は改行されます。<br />
+          const target = document.getElementById("output");<br />
+          はidがoutputの領域を取得してくださいと命令しています。<br />
+          target.textContent = outputValue;<br />
+          は取得した領域のtextContentに代入した変数の値を設定してくださいと命令しています。<br />
+          textContentは領域内に表示する文字になります。<br />
+          <a href="https://qiita.com/RyBB/items/c87af2413c34f9367d00" target="_blank">textContentとinnerHTMLの違い</a>
+        </div>
+      </p>
+    </div>
+    <!-- <div style="margin: 20px;">
+      <a id="html">HTMLのbodyの内容</a><br />
+      <textarea class="lined" id="body" style="width: 800px;height: 600px;" readonly></textarea>
+    </div> -->
+    <footer><a href="../index.html">&lt; 最初に戻る</a></footer>
+  </body>
+</html>
+

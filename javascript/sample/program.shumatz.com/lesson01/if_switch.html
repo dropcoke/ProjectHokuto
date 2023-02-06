@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>首都はどこ?</title>
+</head>
+<body>
+<p><a href="../index.html">[index]</a></p>
+<p>
+<select id="country" style="font-size: 1.2rem">
+<option />
+<option value="japan">日本</option>
+<option value="gbr">イギリス</option>
+<option value="spain">スペイン</option>
+</select>
+<button id="button1">の首都は?</button>
+<!-- <button id="button2">show capital info with switch</button> -->
+</p>
+<p>
+どんなあいさつをする?<br>
+<select id="time" style="font-size: 1.2rem">
+<option />
+<option value="morning">朝の</option>
+<option value="afternoon">昼の</option>
+<option value="night">寝る時の</option>
+</select>
+<button id="button3">あいさつ</button>
+</p>
+<div id="display">
+<p>
+首都は : <span id="result_a"></span>
+</p>
+<p>
+<span id="result_b"></span>
+</p>
+</div>
+</body>
+<script type="text/javascript">
+window.onload = function(){
+	init_event();
+}
+function init_event(){
+	$('button1').onclick = show_capital;
+	// $('button2').onclick = show_capital_with_swich;
+	$('button3').onclick = greeting;
+}
+function show_capital() {
+	reset_output();
+	var country = $('country').value;
+	var capital = '';
+	if (country == 'japan') {
+		capital = '東京';
+	} else if (country == 'gbr') {
+		capital = 'ロンドン';
+	} else if (country == 'spain') {
+		capital = 'マドリッド';
+	} else {
+		capital = 'A city of other planet?';
+	}
+	$('result_a').innerText = capital;
+}
+function show_capital_with_swich() {
+	reset_output();
+	var country = $('country').value;
+	var capital = '';
+	switch (country) {
+		case 'japan':
+			capital = '東京';
+			break;
+		case 'gbr':
+			capital = 'ロンドン';
+            break;
+		case 'spain':
+			capital = 'マドリッド';
+            break;
+        default:
+        	capital = 'A city of other planet?';
+	}
+	$('result_a').innerText = capital;
+}
+function greeting() {
+	reset_output();
+	show_capital();
+	var country = $('country').value;
+	var time = $('time').value;
+	var greeting = '';
+	if (country == 'japan' && time == 'morning') {
+        greeting = 'おはよう!';
+    } else if (country == 'japan' && time == 'afternoon') {
+        greeting = 'こんにちは!';
+    } else if (country == 'japan' && time == 'night') {
+        greeting = 'おやすみなさい!';
+    } else if (country == 'gbr' && time == 'morning') {
+    	greeting = 'Good Morning!';
+    } else if (country == 'gbr' && time == 'afternoon') {
+    	greeting = 'Good Afternoon!';
+    } else if (country == 'gbr' && time == 'night') {
+    	greeting = 'Good Night!';
+    } else if (country == 'spain' && time == 'morning') {
+    	greeting = 'Buenos Dias!';
+    } else if (country == 'spain' && time == 'afternoon') {
+        greeting = 'Buenas Tardes!';
+    } else if (country == 'spain' && time == 'night') {
+        greeting = 'Buenas Noches!';
+    } else {
+    	greeting = '*+&&&$A{{{~|!!!}}}? zzZZZZzzzz....|-)';
+    }
+	$('result_b').innerText = greeting;
+}
+function reset_output () {
+	('result_a').innerText = '';
+    ('result_b').innerText = '';
+}
+
+/**
+ * get object
+ */
+function $(id) {
+	return document.getElementById(id);
+}
+</script>
+</html>

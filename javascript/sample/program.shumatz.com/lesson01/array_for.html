@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>What do you alternate?</title>
+</head>
+<body>
+<p><a href="../index.html">[index]</a></p>
+<p>
+<input type="text" id="add_word" style="width: 250px" placeholder="任意の文字を入力してください">
+<button id="button1">要素を追加!</button>
+</p>
+<p>
+<input type="text" id="delete_word" style="width: 250px" placeholder="削除したい文字を入力してください">
+<button id="button4">要素を削除!</button>
+</p>
+I added ....
+<div id="word_list">
+</div>
+<p>
+<input type="text" id="my_name" placeholder="あなたの名前は?">
+</p>
+<p>
+<select id="times">
+<option value="1">001</option>
+<option value="2">002</option>
+<option value="3">003</option>
+<option value="4">004</option>
+<option value="5">005</option>
+<option value="6">006</option>
+</select>
+<button id="button2">何回呼びますか?</button>
+</p>
+<!-- <p>
+<select id="while">
+<option value="1">001</option>
+<option value="2">002</option>
+<option value="3">003</option>
+<option value="4">004</option>
+<option value="5">005</option>
+<option value="6">006</option>
+</select>
+<button id="button3">while I call you how many counts do you need?</button>
+</p> -->
+<div id="call_you"></div>
+
+
+
+</body>
+<script type="text/javascript">
+window.onload = function(){
+    init_event();
+}
+function init_event(){
+    $('button1').onclick = add_word;
+    $('button2').onclick = call_you;
+    // $('button3').onclick = call_you_while;
+    $('button4').onclick = delete_word;
+}
+var word_list = []
+function add_word() {
+    var add_value = $('add_word').value;
+    word_list.push(add_value);
+    var list_text = '';
+    word_list.forEach(function(value) {
+        list_text += value + '<br>';
+    });
+    $('word_list').innerHTML = list_text;
+    $('add_word').value = '';
+}
+function delete_word() {
+    var delete_value = $('delete_word').value;
+    var list_text = '';
+    var count = 0;
+    var result = false;
+    var del_index = null;
+    // check word
+    for(i = 0; i < word_list.length; i ++) {
+        if (word_list[i] == delete_value) {
+            result = true;
+            break;
+        }
+        count++;
+    };
+    // delete index
+    if(!result) {
+        return;
+    }
+    word_list.splice(count, 1);
+    word_list.forEach(function(value) {
+        list_text += value + '<br>';
+    });
+    $('word_list').innerHTML = list_text;
+    $('delete_word').value = '';
+}
+function call_you() {
+    if($('my_name').value == '') {
+        $('call_you').innerText = 'あなたの名前を教えて!!!';
+        return;
+    }
+    var value = $('my_name').value;
+    var times = $('times').value;
+    var list_text = '';
+    for(i = 0; i < times; i++) {
+        var t = ''
+        if (i > 0) {
+            t = 's'
+        }
+        var count = i + 1;
+        list_text += 'ねえ ' + value + '! 私はあたなを' + count + '回呼びました<br>';
+    }
+    $('call_you').innerHTML = list_text;
+}
+function call_you_while() {
+    if($('my_name').value == '') {
+        $('call_you').innerText = 'Tell me your name!!!';
+        return;
+    }
+    var value = $('my_name').value;
+    var times = $('while').value;
+    var list_text = '';
+    var i = 0;
+    while(i < times) {
+        var t = ''
+        if (times > 1) {
+            t = 's'
+        }
+        list_text += 'Hey ' + value + '! I call you while I count ' + times + '<br>';
+        i++;
+    }
+    $('call_you').innerHTML = list_text;
+}
+
+/**
+ * get object
+ */
+function $(id) {
+    return document.getElementById(id);
+}
+</script>
+</html>

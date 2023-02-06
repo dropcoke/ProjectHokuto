@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery-3.2.1.slim.min.js"></script>
+</head>
+<body>
+<div id="open" style="margin:0 auto;height:500px; width:500px">
+</div>
+<script type="text/javascript">
+'use strict';
+var audioContext = new AudioContext();
+
+var colorValues = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"]
+ 	// goSound();
+	setInterval("goSound()", 200);
+
+
+
+
+
+function goSound () {
+	var size = parseInt(Math.random() * 300 + 30);
+	var top = parseInt(Math.random() * 400);
+	var left = parseInt(Math.random() * 500);
+	var playTime = Math.random() * 200000000;
+	var color = "#";
+	for (var i = 0; i < 6; i++) {
+		color += colorValues[parseInt(Math.random() * colorValues.length)];
+	}
+
+	//Web Audio APIを利用するためのインスタンス生成
+	// オシレーターを作成
+	// var osciillatorNode = audioContext.createOscillator();
+	var note = parseInt(Math.random() * 80 + 40);
+	// MIDIノートナンバーを周波数に変換
+	var freq = 440.0 * Math.pow(2.0, (note - 69.0) / 12.0);
+	// osciillatorNode.frequency.value = freq;
+	// // オシレーターを最終出力に接続
+	// osciillatorNode.connect(audioContext.destination);
+	// // オシレーター動作
+	// osciillatorNode.start();
+	$("#open").text(note);
+	$("#open").css('font-size', size + "px");
+	$("#open").css('padding-top', top + "px");
+	$("#open").css('padding-left', left + "px");
+	$("#open").css('color', color);
+	// for(var i = 0; i < playTime; i++) {
+
+	// }
+	// osciillatorNode.stop();
+
+}
+
+</script>
+</body>
+</html>

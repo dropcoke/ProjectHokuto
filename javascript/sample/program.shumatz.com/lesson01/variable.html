@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>How is a difference of two variable type!</title>
+</head>
+<body>
+<p><a href="../index.html">[index]</a></p>
+<p>
+<input type="text" id="input_a"><button id="button1">show primitive type</button>
+</p>
+<p>
+<input type="text" id="input_b"><button id="button2">show reference type</button>
+</p>
+<div id="display">
+<p>
+a is : <span id="result_a"></span>
+</p>
+<p>
+b is : <span id="result_b"></span>
+</p>
+</div>
+</body>
+<script type="text/javascript">
+window.onload = function(){
+	init_event();
+}
+function init_event(){
+	$('button1').onclick = show_input_a;
+	$('button2').onclick = show_input_b;
+}
+function show_input_a() {
+	var a = $('input_a').value;
+	var b = a;
+	a = "I changed!";
+	$('result_a').innerText = a;
+	$('result_b').innerText = b;
+
+}
+function show_input_b() {
+	var a = $('input_b');
+    var b = a;
+    a.value = "I changed!";
+    $('result_a').innerText = a.value;
+    $('result_b').innerText = b.value;
+}
+/**
+ * get object
+ */
+function $(id) {
+	return document.getElementById(id);
+}
+</script>
+</html>
