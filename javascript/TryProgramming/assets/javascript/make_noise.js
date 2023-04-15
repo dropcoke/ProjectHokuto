@@ -41,7 +41,15 @@ const drawBlockArea = (y, x) => {
     document.getElementById('output-area').innerHTML = outputHtml;
 }
 let synth = new MySynth();
-const playSound = (oscillator = 1, note = 0, volume = 100) => {
+let playing = false;
+let waiting = null;
+let currentLength = 0;
+
+const startSound = (oscillator = 1, note = 0, volume = 100, length = 1) => {
+
+}
+const playSound = (oscillator, note = 0, length = 1) => {
+    const volume = 1;
     const oscillatorTypes = ['sine', 'square', 'sawtooth', 'triangle'];
     // 音階を周波数に設定
     notes = {'C1': 65.4,
@@ -103,15 +111,33 @@ const playSound = (oscillator = 1, note = 0, volume = 100) => {
         'A4',
         'B4',
         ];
-        console.log(oscillator);
     if (note <= 0 || note > keys.length){
         throw new Error('その音程はありません' + note);
     }
     if (oscillator <= 0 || oscillator > oscillatorTypes.length){
         throw new Error('その音程はありません');
     }
-    synth.play(volume, notes[keys[note - 1]], oscillatorTypes[oscillator - 1]);
+    if (playing) {
+        waiting = setTimeout(() => {playSound(oscillator, note, length);}, currentLength);
+        currentLength = length * 1000 + 10;
+    } else {
+        console.log(volume);
+        console.log(keys[note - 1]);
+        console.log(oscillatorTypes[oscillator - 1]);
+        console.log(currentLength);
+
+
+        synth.play(1, notes[keys[note - 1]], oscillatorTypes[oscillator - 1]);
+        setTimeout(stopSound, length * 1000);
+        currentLength = length * 1000 + 10;
+        // clearInterval(waiting);
+        playing = true;
+    }
+
+
 }
 const stopSound = () => {
+    console.log("stop")
     synth.stop();
+    playing = false;
 }
