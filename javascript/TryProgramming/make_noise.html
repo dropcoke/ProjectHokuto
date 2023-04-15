@@ -2,8 +2,6 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>私のウェブページ</title>
-    <meta charset="UTF-8">
     <title>Javascript Programming</title>
     <link rel="stylesheet" href="assets/stylesheet/style.css">
     <link rel="stylesheet" href="assets/stylesheet/bootstrap/bootstrap.min.css">
@@ -13,10 +11,11 @@
     <scrip src="assets/javascript/jquery-ui/jquery-ui.min.js"></script>
     <script src="assets/javascript/jquery/jquery-3.6.1.min.js"></script>
     <script src="assets/javascript/jquery/jquery-linedtextarea.js"></script>
+    <script src="assets/javascript/mysynth.js"></script>
 </head>
 <body>
     <header>
-        <h1>私のウェブページへようこそ</h1>
+        <h1>音を鳴らしてみよう!</h1>
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -25,16 +24,21 @@
             </ul>
         </nav>
     </header>
-
     <main>
-        <h2>私について</h2>
-        <p>こんにちは、私は山田太郎と申します。</p>
+        <div style="width: 800px;">
+            <textarea class="lined" id="program-area" style="width: 800px; height: 200px;"></textarea>
+        </div>
+        <div style="width: 800px; height: 50px;">
+            <button class="btn btn-primary" id="btn-execute" style="float: right">プログラム実行</button>
+        </div>
+        <div id="output-area"></div>
+        <div id="error-header" style="color: red; font-weight: bold; font-size: 1.2rem;" ></div>
+        <div id="message" style="color: red"></div>
     </main>
 
     <footer>
-        <p>&copy; 2021 Shumatz</p>
+        <p>&copy; 2023 Shumatz</p>
     </footer>
-
     <script src="assets/javascript/app.js"></script>
 </body>
 </html>

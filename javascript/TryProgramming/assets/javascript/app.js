@@ -40,3 +40,78 @@ const drawBlockArea = (y, x) => {
     const outputHtml = tableStart + tableContent + tableEnd;
     document.getElementById('output-area').innerHTML = outputHtml;
 }
+let synth = new MySynth();
+const playSound = (oscillator = 1, note = 0, volume = 100) => {
+    const oscillatorTypes = ['sine', 'square', 'sawtooth', 'triangle'];
+    // 音階を周波数に設定
+    notes = {'C1': 65.4,
+    'D1': 73.41,
+    'E1': 82.4,
+    'F1': 87.3,
+    'G1': 97.99,
+    'A1': 110,
+    'B1':123.47,
+    'C2':130.81,
+    'D2':146.83,
+    'E2':164.81,
+    'F2':174.61,
+    'G2':195.99,
+    'A2':220,
+    'B2':246.94,
+    'C3':261.62,
+    'D3':293.66,
+    'E3':329.62,
+    'F3':349.22,
+    'G3':391.99,
+    'A3':440,
+    'B3':493.88,
+    'C4':523.25,
+    'D4':587.33,
+    'E4':659.25,
+    'F4':698.45,
+    'G4':783.99,
+    'A4':880,
+    'B4':987.76,
+    };
+    // 音階
+    keys = ['C1',
+        'D1',
+        'E1',
+        'F1',
+        'G1',
+        'A1',
+        'B1',
+        'C2',
+        'D2',
+        'E2',
+        'F2',
+        'G2',
+        'A2',
+        'B2',
+        'C3',
+        'D3',
+        'E3',
+        'F3',
+        'G3',
+        'A3',
+        'B3',
+        'C4',
+        'D4',
+        'E4',
+        'F4',
+        'G4',
+        'A4',
+        'B4',
+        ];
+        console.log(oscillator);
+    if (note <= 0 || note > keys.length){
+        throw new Error('その音程はありません' + note);
+    }
+    if (oscillator <= 0 || oscillator > oscillatorTypes.length){
+        throw new Error('その音程はありません');
+    }
+    synth.play(volume, notes[keys[note - 1]], oscillatorTypes[oscillator - 1]);
+}
+const stopSound = () => {
+    synth.stop();
+}
