@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Programming</title>
+    <link rel="stylesheet" href="assets/stylesheet/style.css">
+    <link rel="stylesheet" href="assets/stylesheet/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/stylesheet/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/javascript/jquery/jquery-linedtextarea.css">
+    <script src="assets/javascript/bootstrap/bootstrap.min.js"></script>
+    <scrip src="assets/javascript/jquery-ui/jquery-ui.min.js"></script>
+    <script src="assets/javascript/jquery/jquery-3.6.1.min.js"></script>
+    <script src="assets/javascript/jquery/jquery-linedtextarea.js"></script>
+    <script src="assets/javascript/mysynth.js"></script>
+</head>
+<body>
+    <header>
+        <h1>音を鳴らしてみよう!</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="make_noise.html">音を鳴らそう！</a></li>
+                <li><a href="move_foward.html">歩きましょう(1)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col">
+                <div>
+                    <dl>
+                        音を出してみましょう。<br>
+
+                    </dl>
+                    <dl>
+                        音を止めてみましょう。<br>
+
+                    </dl>
+                </div>
+                <div style="width: 500px;">
+                    <textarea class="lined" id="program-area" style="width: 500px; height: 200px;"></textarea>
+                </div>
+                <div style="width: 500px; height: 50px;">
+                    <button class="btn btn-primary" id="btn-execute" style="float: right">プログラム実行</button>
+                </div>
+
+                <div id="error-header" style="color: red; font-weight: bold; font-size: 1.2rem;" ></div>
+                <div id="message" style="color: red"></div>
+            </div>
+            <div class="col" style="max-width: 600px">
+                <div id="output-area"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Shumatz</p>
+    </footer>
+    <script src="assets/javascript/move_foward.js"></script>
+</body>
+</html>

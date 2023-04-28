@@ -20,25 +20,17 @@
             <ul>
                 <li><a href="index.html">ホーム</a></li>
                 <li><a href="make_noise.html">音を鳴らそう！</a></li>
-                <li><a href="move_foward.html">歩きましょう(1)</a></li>
+                <li><a href="#">お問い合わせ</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <div>
-            <dl>
-                音を出してみましょう。<br>
-                関数「startSound」を使って音を出します。<br>
-                例) startSound(1, 1, 100);<br>
-                <li>1番目に設定する値は音色です。音色は1から4まで設定できます。</li>
-                <li>2番目に設定する値は音階です。音階は1から28まで設定できます。</li>
-                <li>3番目に設定する値は音の長さです。音の長さは秒数を設定できます。</li>
-            </dl>
-            <dl>
-                音を止めてみましょう。<br>
-                関数「stopSound」を使って音を止めます。<br>
-                例) stopSound();<br>
-            </dl>
+            playSoundを使って音を出してみましょう。<br>
+            例) playSound(1, 1, 1);<br>
+            1番目に設定する値は音色です。音色は1から4まで設定できます。<br>
+            2番目に設定する値は音階です。音階は1から28まで設定できます。<br>
+            3番目に設定する値は音の長さです。音の長さは秒数を設定できます。
         </div>
         <div style="width: 800px;">
             <textarea class="lined" id="program-area" style="width: 800px; height: 200px;"></textarea>
