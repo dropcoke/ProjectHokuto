@@ -29,6 +29,7 @@ $(() => {
 
 
 let playMySynth = null;
+let sound = 1;
 const startSound = (oscillator, note = 0, length = 1) => {
         playMySynth = PlayMySynth;
     // console.log(playMySynth);
@@ -41,50 +42,51 @@ const stopSound = () => {
     }
 
 }
+let noteLength = 1;
 const playC1 = () => {
-    startSound(1, 8, 1);
+    startSound(sound, 8, noteLength);
 }
 const playD1 = () => {
-    startSound(1, 9, 1);
+    startSound(sound, 9, noteLength);
 }
 const playE1 = () => {
-    startSound(1, 10, 1);
+    startSound(sound, 10, noteLength);
 }
 const playF1 = () => {
-    startSound(1, 11, 1);
+    startSound(sound, 11, noteLength);
 }
 const playG1 = () => {
-    startSound(1, 12, 1);
+    startSound(sound, 12, noteLength);
 }
 const playA1 = () => {
-    startSound(1, 13, 1);
+    startSound(sound, 13, noteLength);
 }
 const playB1 = () => {
-    startSound(1, 14, 1);
+    startSound(sound, 14, noteLength);
 }
 const playC2 = () => {
-    startSound(1, 15, 1);
+    startSound(sound, 15, noteLength);
 }
 const playD2 = () => {
-    startSound(1, 16, 1);
+    startSound(sound, 16, noteLength);
 }
 const playE2 = () => {
-    startSound(1, 17, 1);
+    startSound(sound, 17, noteLength);
 }
 const playF2 = () => {
-    startSound(1, 18, 1);
+    startSound(sound, 18, noteLength);
 }
 const playG2 = () => {
-    startSound(1, 19, 1);
+    startSound(sound, 19, noteLength);
 }
 const playA2 = () => {
-    startSound(1, 20, 1);
+    startSound(sound, 20, noteLength);
 }
 const playB2 = () => {
-    startSound(1, 21, 1);
+    startSound(sound, 21, noteLength);
 }
 const playC3 = () => {
-    startSound(1, 22, 1);
+    startSound(sound, 22, noteLength);
 }
 const PlayMySynth = {
     synth:  new MySynth(),

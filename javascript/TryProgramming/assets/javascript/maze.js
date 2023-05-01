@@ -282,12 +282,15 @@ const BlockNavi = {
         if (direction < 0) {
             direction = direction + 360
         }
+        if (direction == 360) {
+            direction = 0;
+        }
         this.direction = direction;
         this.setDirectionArrow();
         this.moving = true;
         this.getCurrentElement().innerHTML = this.arrow;
         setTimeout(() => {this.moving = false;}, stepLength);
-        console.log(this.step++)
+        console.log(direction)
     },
     moving: false,
     waiting: [],
