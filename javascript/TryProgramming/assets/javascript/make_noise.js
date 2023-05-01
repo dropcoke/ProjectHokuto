@@ -41,6 +41,51 @@ const stopSound = () => {
     }
 
 }
+const playC1 = () => {
+    startSound(1, 8, 1);
+}
+const playD1 = () => {
+    startSound(1, 9, 1);
+}
+const playE1 = () => {
+    startSound(1, 10, 1);
+}
+const playF1 = () => {
+    startSound(1, 11, 1);
+}
+const playG1 = () => {
+    startSound(1, 12, 1);
+}
+const playA1 = () => {
+    startSound(1, 13, 1);
+}
+const playB1 = () => {
+    startSound(1, 14, 1);
+}
+const playC2 = () => {
+    startSound(1, 15, 1);
+}
+const playD2 = () => {
+    startSound(1, 16, 1);
+}
+const playE2 = () => {
+    startSound(1, 17, 1);
+}
+const playF2 = () => {
+    startSound(1, 18, 1);
+}
+const playG2 = () => {
+    startSound(1, 19, 1);
+}
+const playA2 = () => {
+    startSound(1, 20, 1);
+}
+const playB2 = () => {
+    startSound(1, 21, 1);
+}
+const playC3 = () => {
+    startSound(1, 22, 1);
+}
 const PlayMySynth = {
     synth:  new MySynth(),
     playing: false,

@@ -26,11 +26,10 @@ $(() => {
     });
     blockNavi = BlockNavi;
     blockNavi.outputArea = document.getElementById('output-area');
-
     // テーブルサイズ
     const tableSize = {y: 7, x: 7};
     blockNavi.drawTable(tableSize);
-    drawRouteFirst();
+    drawRouteThird();
 });
 
 

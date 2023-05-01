@@ -16,7 +16,7 @@
 </head>
 <body>
     <header>
-        <h1>前進しよう</h1>
+        <h1>曲がってみる</h1>
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
@@ -33,15 +33,22 @@
         <div class="row">
             <div class="col">
                 <div>
-                    <dl>
-                        コマンド: moveFoward(); を使ってゴールを目指しましょう!<br>
-                    </dl>
-                    <dl>
-                        コマンド: moveFoward();は今いるところから矢印の方向へ一つ進みます。<br>
-                    </dl>
+                    <div>
+                        曲かどにぶつかったら方向転換してみましょう!<br>
+                    </div>
+                    <div>
+                        次のプログラムは3つ進んでから右に方向転換します。<br>
+                        方向展開した後に更にmoveFoward()を繰り返してゴールまで目指しましょう!
+                    </div>
                 </div>
                 <div style="width: 500px;">
-                    <textarea class="lined" id="program-area" style="width: 500px; height: 380px;"></textarea>
+                    <textarea class="lined" id="program-area" style="width: 500px; height: 380px;">
+for (let i = 0; i < 3; i++) {
+    moveFoward();
+    if(i == 2) {
+        turnRight();
+    }
+}</textarea>
                 </div>
                 <div style="width: 500px; height: 50px;">
                     <button class="btn btn-primary" id="btn-execute" style="float: right">プログラム実行</button>
@@ -92,6 +99,6 @@
     <footer>
         <p>&copy; 2023 Shumatz</p>
     </footer>
-    <script src="assets/javascript/move_foward.js"></script>
+    <script src="assets/javascript/turn_right.js"></script>
 </body>
 </html>
