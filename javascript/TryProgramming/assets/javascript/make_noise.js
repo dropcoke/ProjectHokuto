@@ -182,7 +182,7 @@ const PlayMySynth = {
         }
         if (this.playing) {
             this.waiting.push(setTimeout(() => {this.playSound(oscillator, note, length);}, this.currentLength));
-            this.currentLength = length * 1000 + 10;
+            this.currentLength = length * 1000;
         } else {
             console.log(volume);
             console.log(keys[note - 1]);
@@ -190,7 +190,7 @@ const PlayMySynth = {
             console.log(this.currentLength);
             this.synth.play(-10, notes[keys[note - 1]], oscillatorTypes[oscillator - 1]);
             setTimeout(() => {this.stopSound();}, length * 1000);
-            this.currentLength = length * 1000 + 10;
+            this.currentLength = length * 1000;
             this.playing = true;
         }
     },
