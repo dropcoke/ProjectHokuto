@@ -114,17 +114,25 @@ const turnRight = () => {
  * 元に戻す
  */
 const reset = () => {
+    $('#modalError').hide();
     blockNavi.initRoute();
     blockNavi.reset();
 }
 
-const stepLength = 800;
+let stepLength = 800;
 
 const BlockNavi = {
+    elementId: 'block_table',
+    element: null,
     outputArea: null,
     tableBlock: [],
     cells: [],
     route: [],
+    selectedCell: {y:0, x: 0},
+    getSelectedElement() {
+        return document.getElementById(this.selectedCell.y + "," + this.selectedCell.x);
+    },
+    isSelected: false,
     // テーブル描画
     drawTable(size) {
         // テーブルサイズ
@@ -154,6 +162,24 @@ const BlockNavi = {
             this.cells[i] = []
                 for (let j = 0; j < x; j++) {
                     this.cells[i][j] = document.getElementById(this.tableBlock[i][j]);
+                    this.cells[i][j].addEventListener('click', (e) => {
+                        let target = e.target;
+                        if(!e.target.id) {
+                            target = e.target.parentElement;
+                            console.log(e.target.parentElement);
+                        }
+                        const postion = target.id.split(",");
+                        const y = Number(postion[0]);
+                        const x = Number(postion[1]);
+                        if (this.route[postion[0]][postion[1]]) {
+                            // this.getSelectedElement().style.background = "white";
+                            // this.selectedCell = {y: y, x: x}
+                            // target.style.background = 'aliceblue';
+                            // this.isSelected = true;
+                            this.changeSelectElement(y, x);
+
+                        }
+                    });
                 }
         }
     },
@@ -313,23 +339,10 @@ const BlockNavi = {
             if (y < 0) {
                 this.out = true;
             }
-            if (!this.route[y]) {
-                this.out = true;
-            }
-            else if (!this.route[y][x]) {
-                this.out = true;
-            }
         }
         else if (this.direction === direction.down) {
             y += 1;
             if (y > this.route.length) {
-                this.out = true;
-
-            }
-            if (!this.route[y]) {
-                this.out = true;
-            }
-            else if (!this.route[y][x]) {
                 this.out = true;
             }
         }
@@ -338,24 +351,19 @@ const BlockNavi = {
             if (x < 0) {
                 this.out = true;
             }
-            if (!this.route[y]) {
-                this.out = true;
-            }
-            else if (!this.route[y][x]) {
-                this.out = true;
-            }
         }
         else if (this.direction === direction.right) {
             x += 1;
             if (x > this.route[y].length) {
                 this.out = true;
             }
-            if (!this.route[y]) {
-                this.out = true;
-            }
-            else if (!this.route[y][x]) {
-                this.out = true;
-            }
+        }
+        // 行き先が経路にない場合はNG
+        if (!this.route[y]) {
+            this.out = true;
+        }
+        else if (!this.route[y][x]) {
+            this.out = true;
         }
         if (this.finished && this.out) {
             $('#modalError').show();
@@ -374,7 +382,19 @@ const BlockNavi = {
             this.getCurrentElement().innerHTML = this.arrow;
         }
         setTimeout(() => {this.moving = false;}, stepLength);
+    },
+    // 選択セル変更
+    changeSelectElement(y ,x) {
+        if (this.isSelected) {
+            if (this.goal.y == this.selectedCell.y && this.goal.x == this.selectedCell.x) {
+                this.getSelectedElement().style.background = "aqua";
+            }
+            else {
+                this.getSelectedElement().style.background = "white";
+            }
+        }
+        this.selectedCell = {y: y, x: x};
+        this.getSelectedElement().style.background = 'aliceblue';
+        this.isSelected = true;
     }
-
-
 }
