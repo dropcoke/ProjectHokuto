@@ -140,8 +140,8 @@ const BlockNavi = {
         const x = size.x;
         // テーブルテンプレート
         const tableStart = '<table id="block_table" class="table table-bordered" style="border-color: black;"><tbody>';
-        const tableEnd = '</tbody></table>'
-        let tdTag = '<td id="###,$$$" style="width: 75px; height: 75px; text-align: center; background: #000000" class="align-middle"></td>'
+        const tableEnd = '</tbody></table>';
+        let tdTag = '<td id="###,$$$" style="width: 75px; height: 75px; text-align: center; background: #000000" class="align-middle"></td>';
         let tableContent = '';
         // テーブル作成
         for (let i = 0; i < y; i++) {
@@ -166,12 +166,11 @@ const BlockNavi = {
                         let target = e.target;
                         if(!e.target.id) {
                             target = e.target.parentElement;
-                            console.log(e.target.parentElement);
                         }
-                        const postion = target.id.split(",");
-                        const y = Number(postion[0]);
-                        const x = Number(postion[1]);
-                        if (this.route[postion[0]][postion[1]]) {
+                        const position = target.id.split(",");
+                        const y = Number(position[0]);
+                        const x = Number(position[1]);
+                        if (this.route[position[0]][position[1]]) {
                             // this.getSelectedElement().style.background = "white";
                             // this.selectedCell = {y: y, x: x}
                             // target.style.background = 'aliceblue';
