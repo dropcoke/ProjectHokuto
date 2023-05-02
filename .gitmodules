@@ -1,0 +1,3 @@
+[submodule "javascript/InitialStudy/sample/js-sketch"]
+	path = javascript/InitialStudy/sample/js-sketch
+	url = git@github.com:dropcoke/js-sketch.git
