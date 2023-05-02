@@ -66,7 +66,7 @@ const stopSound = () => {
     }
 
 }
-let noteLength = 0.5;
+let noteLength = 1;
 const playC1 = () => {
     startSound(sound, 8, noteLength);
     playMySynth.markNote(0, 0, noteLength);
