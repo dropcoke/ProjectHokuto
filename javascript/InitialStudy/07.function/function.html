@@ -21,16 +21,16 @@
   <body>
     <header><a href="../index.html">&lt; 最初に戻る</a></header>
     <div>
-      <h2>関数</h2>
+      <h2>コマンド(関数)</h2>
       <p>自分で作った処理を再利用しよう</p>
-      <p>関数とは与えられた値をもとに。定められた独自の処理を実行してその結果を返します。</p>
+      <p>コマンド(関数)とは与えられた値をもとに。定められた独自の処理を実行してその結果を返します。</p>
     </div>
-    <div><button onclick="location.reload();">再描画</button></div>
+    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px">
-      ここで関数を作成して実行した結果を、コンソールと画面に表示します。<br />
+      ここでコマンド(関数)を作成して実行した結果を、コンソールと画面に表示します。<br />
       <p>
         <h3>コンソールプログラム</h3>
-        <h4>引数がなく全ての商品を取得する関数</h4>
+        <h4>引数がなく全ての商品を取得するコマンド(関数)</h4>
         <div>
           以下のプログラムを「function.js」に書いてみましょう。
           <p>
@@ -44,7 +44,7 @@ const drink = [
     {price: 100, name: "南アルプス天然水"}, // 4
     {price: 120, name: "ウィルキンソン強炭酸水"}]; // 5
 
-// 関数を宣言します。
+// コマンド(関数)を宣言します。
 // 1. 自動販売機にあるジュースのリストを取得します。
 const getJuiceList = () => {
     let vendingMachine = "販売商品のリスト \n";
@@ -60,19 +60,19 @@ const getJuiceList = () => {
 console.log(getJuiceList());
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           自動販売機の中身が見れましたか?<br />
-          getJuiceListと言う関数を作って、その関数を呼び出します。<br />
-          そもそも関数って何?<br />
+          getJuiceListと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br />
+          そもそもコマンド(関数)って何?<br />
           与えられた値(引数とかパラメータなどと言います)をもとに、<br />
           定められた独自の処理を実行し、その結果を返す命令のことです。<br />
-          実際には引数が与えられなかったり、その結果を返さないような関数も利用できます。<br />
-          上記の関数には引数がありません。<br />
-          今回作った関数getJuiceListではdrinkと言う配列に格納した要素を展開して<br />
+          実際には引数が与えられなかったり、その結果を返さないようなコマンド(関数)も利用できます。<br />
+          上記のコマンド(関数)には引数がありません。<br />
+          今回作ったコマンド(関数)getJuiceListではdrinkと言う配列に格納した要素を展開して<br />
           その情報を変数に代入して返します。(return vendingMachine; がそれです。 )<br />
           今までは結果を表示するために画面を再描画する必要がありましたが、<br />
-          関数を使うと下のボタンをクリックすることで同じ処理を実行することができます。<br />
+          コマンド(関数)を使うと下のボタンをクリックすることで同じ処理を実行することができます。<br />
           <div><button onclick="console.log(getJuiceList());">getJuiceListを実行する。</button></div>
           結果を返さない場合を試してみてください。<br />
           20行目の<br />
@@ -81,7 +81,7 @@ console.log(getJuiceList());
           console.log("今は" +  drink[i].name + "取り出しています。" );<br />
           を18行目に書いて再描画してください。
         </div>
-        <h4>引数から商品を取得する関数</h4>
+        <h4>引数から商品を取得するコマンド(関数)</h4>
         <div>
           以下のプログラムを「function.js」に書いてみましょう。<br />
           <p>
@@ -93,7 +93,7 @@ const drink = [
     {price: 140, name: "おーいお茶"}, // 3
     {price: 100, name: "南アルプス天然水"}, // 4
     {price: 120, name: "ウィルキンソン強炭酸水"}]; // 5
-// 関数を宣言します (以下のように書くこともできます)
+// コマンド(関数)を宣言します (以下のように書くこともできます)
 // 2. 自動販売機のジュースを選びます
 function getJuice(number) {
     const target = number - 1;
@@ -113,16 +113,16 @@ function getJuice(number) {
 console.log(getJuice(1));
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           自動販売機のどの飲料が取得できましたか?<br />
-          getJuiceと言う関数を作って、その関数を呼び出します。<br />
-          今回作った関数getJuiceListではdrinkと言う配列に格納した要素の中から一つを取得して<br />
+          getJuiceと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br />
+          今回作ったコマンド(関数)getJuiceListではdrinkと言う配列に格納した要素の中から一つを取得して<br />
           その情報を変数に代入して返します。(return vendingMachine; がそれです。 )<br />
           下のボタンをクリックすることでどんな飲み物が取得できるのか試してみてください。<br />
           <div><button onclick="console.log(getJuice(Math.floor(Math.random() * 5 + 1)));">getJuiceを実行する。</button></div>
         </div>
-        <h4>引数から商品と投入金額を設定して購入状態を取得する関数</h4>
+        <h4>引数から商品と投入金額を設定して購入状態を取得するコマンド(関数)</h4>
         <div>
           以下のプログラムを「function.js」に書いてみましょう。<br />
           <p>
@@ -134,7 +134,7 @@ const drink = [
     {price: 140, name: "おーいお茶"}, // 3
     {price: 100, name: "南アルプス天然水"}, // 4
     {price: 120, name: "ウィルキンソン強炭酸水"}]; // 5
-// 関数を宣言します。
+// コマンド(関数)を宣言します。
 // 3. ジュースを選んでお金を投入して購入します。
 const buyJuice = (number, pay) => {
     const target = number - 1;
@@ -161,11 +161,11 @@ const buyJuice = (number, pay) => {
 console.log(buyJuice(1, 100));
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           自動販売機のどの飲料を選んでちゃんと購入できましたかd?<br />
-          buyJuiceと言う関数を作って、その関数を呼び出します。<br />
-          今回作った関数buyJuiceではdrinkと言う配列に格納した要素の中から一つ何かを取得して、<br />
+          buyJuiceと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br />
+          今回作ったコマンド(関数)buyJuiceではdrinkと言う配列に格納した要素の中から一つ何かを取得して、<br />
           金額を支払い実際に購入しようとします。<br />
           投入金額が少なければ購入できませんし、投入金額が多ければお釣りが発生します。<br />
           選択した飲料の情報と購入状況を変数に代入して返します。(return message; がそれです。 )<br />
@@ -187,7 +187,7 @@ const drink = [
     {price: 140, name: "おーいお茶"}, // 3
     {price: 100, name: "南アルプス天然水"}, // 4
     {price: 120, name: "ウィルキンソン強炭酸水"}]; // 5
-// 関数を宣言します。
+// コマンド(関数)を宣言します。
 // 3. ジュースを選んでお金を投入して購入します。
 const buyJuice = (number, pay) => {
     const target = number - 1;
@@ -228,8 +228,8 @@ const execute = () => {
 }
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           <div style="margin-top: 10px;">
             <button onclick="execute()">プログラム実行!</button>
             <pre>
@@ -240,10 +240,10 @@ const execute = () => {
           「プログラム実行」ボタンをクリックしてください。<br />
           ボタンをクリックしたら代入した値が表示されましたか?<br />
           ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはfunction.jsに書かれている「execute」と言う関数を実行してくださいと命令しています。<br />
-          関数executeでは&lt;input type="number" id="number" value="1" /&gt;で設定した商品番号と<br />
+          これはfunction.jsに書かれている「execute」と言うコマンド(関数)を実行してくださいと命令しています。<br />
+          コマンド(関数)executeでは&lt;input type="number" id="number" value="1" /&gt;で設定した商品番号と<br />
           &lt;input type="number" id="payment" value="100" /&gt;で設定した金額を引数にして<br />
-          関数buyJuiceを実行して、その結果の飲料情報と購入状況を<br />
+          コマンド(関数)buyJuiceを実行して、その結果の飲料情報と購入状況を<br />
           &lt;div id="output"&gt;&lt;/div&gt;に表示してくださいと命令しています。<br />
           const target = document.getElementById("output");<br />
           はidがoutputの領域を取得してくださいと命令しています。<br />

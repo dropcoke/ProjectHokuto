@@ -24,7 +24,7 @@
       <h2>条件分岐</h2>
       <p>ifやswitchを使って条件によって処理を切り替えよう。</p>
     </div>
-    <div><button onclick="location.reload();">再描画</button></div>
+    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px">
       ここでは比較した値を条件に判断して処理を切り替えて、その結果をコンソールと画面に表示します。<br />
       <p>
@@ -47,8 +47,8 @@ if (answerColor === favoriteColor) {
 }
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           あなたの好きな色は正解でしたか?<br />
           ここではif文を使って、期待されていた答えの色があなたのお気に入りの色と同じであるか判断しています。<br />
           もし同じ色の場合は色が表示されて、違う場合はハズレが表示されてしまいます。<br />
@@ -86,8 +86,8 @@ if (selectedColor === green) {
 }
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           あなたが選んだ色の紙はありましたか?<br />
           ここではif文を使って、選んだ色が期待されていたいずれかの色と同じであれば<br />
           その色の紙があることを表示して、同じ色のものがなければその色の紙がないことを表示します。<br />
@@ -119,8 +119,8 @@ else {
 }
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           黒字でしたか?赤字でしたか?<br />
           ここではif文を使って、収入が支出より多い場合は黒字、支出が多い場合は赤字、<br />
           収入と支出が同じ場合は収支が同じと表示されます。<br />
@@ -160,8 +160,8 @@ switch (selectedColor) {
 }
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           あなたが選んだ色の紙はありましたか?<br />
           ここではswitch文を使って、選んだ色が期待されていたいずれかの色と同じであれば<br />
           その色の紙があることを表示して、同じ色のものがなければその色の紙がないことが表示されてしまいます。<br />
@@ -198,8 +198,8 @@ switch (selectedColor) {
   }
             </textarea>
             </p>
-            <div><button onclick="location.reload();">再描画</button></div>
-            プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+            <div><button onclick="">プログラム実行</button></div>
+            プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
             青の紙を取得した後もプログラムがとまりせません。。。
         </div>
       </p>
@@ -248,8 +248,8 @@ const execute = () => {
 }
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           <div style="margin-top: 10px;">
             <button onclick="execute()">プログラム実行!</button><br />
 
@@ -261,9 +261,9 @@ const execute = () => {
           「プログラム実行」ボタンをクリックしてください。<br />
           ボタンをクリックしたら背景色が変更され、何色の紙が選ばれたか表示されましたか?<br />
           ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはボタンをクリックした時にif.jsに書かれている「execute」と言う関数を実行してくださいと命令しています。<br />
-          (関数については別途説明いたします。)<br />
-          関数executeでは&lt;div id="output"&gt;&lt;/div&gt;に<br />
+          これはボタンをクリックした時にif.jsに書かれている「execute」と言うコマンド(関数)を実行してくださいと命令しています。<br />
+          (コマンド(関数)については別途説明いたします。)<br />
+          コマンド(関数)executeでは&lt;div id="output"&gt;&lt;/div&gt;に<br />
           &lt;input id="color" /&gt;で入力された色がプログラムで定義された選択色に存在した場合、<br />
           パネルの背景色をその色に変更してどの色の紙が選択されたか表示してくださいと命令しています。<br />
           const target = document.getElementById("output");<br />

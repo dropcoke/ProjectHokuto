@@ -16,14 +16,17 @@
 </head>
 <body>
     <header>
-        <h1>前進します(2)</h1>
+        <h1>前進します</h1>
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
-                <li><a href="make_noise.html">音を鳴らそう！</a></li>
-                <li><a href="move_foward.html">前進します</a></li>
+                <li><a href="move_forward.html">前進します</a></li>
                 <li><a href="turn_right.html">曲がります</a></li>
-                <li><a href="move_foward2.html">前進します(2)</a></li>
+                <li><a href="move_forward2.html">前進します(2)</a></li>
+                <li><a href="turn_right2.html">曲がります(2)</a></li>
+                <li><a href="turn_around.html">迷路脱出</a></li>
+                <li><a href="make_noise.html">音を鳴らそう！</a></li>
+                <li><a href="../InitialStudy/index.html">javasctipt入門</a></li>
             </ul>
         </nav>
     </header>
@@ -32,19 +35,14 @@
             <div class="col">
                 <div>
                     <div>
-                        繰り返しをしてあっという間にゴールを目指しましょう!<br>
+                        コマンド: moveForward(); を使ってゴールを目指しましょう!<br>
                     </div>
                     <div>
-                        次のプログラムはmoveFoward()を2回続けて実行します。<br>
-                        (0回目, 1回目で2回繰り返します。)<br>
-                        moveFoward()を繰り返して一気にゴールまで目指しましょう!
+                        コマンド: moveForward();は今いるところから矢印の方向へ一つ進みます。<br>
                     </div>
                 </div>
                 <div style="width: 500px;">
-                    <textarea class="lined" id="program-area" style="width: 500px; height: 380px;">
-for (let i = 0; i < 2; i++) {
-    moveFoward();
-}</textarea>
+                    <textarea class="lined" id="program-area" style="width: 500px; height: 380px;"></textarea>
                 </div>
                 <div style="width: 500px; height: 50px;">
                     <button class="btn btn-primary" id="btn-execute" style="float: right">プログラム実行</button>
@@ -95,6 +93,6 @@ for (let i = 0; i < 2; i++) {
     <footer>
         <p>&copy; 2023 Shumatz</p>
     </footer>
-    <script src="assets/javascript/move_foward.js"></script>
+    <script src="assets/javascript/move_forward.js"></script>
 </body>
 </html>

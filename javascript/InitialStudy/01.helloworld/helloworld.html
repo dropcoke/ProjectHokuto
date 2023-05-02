@@ -11,9 +11,7 @@
         // const bodyOut = document.getElementById("body");
         // const bodyContent = document.getElementsByTagName("body");
         // bodyOut.innerHTML = bodyContent[0].innerHTML.trim();
-        $(".lined").linedtextarea({
-          selectedLine: 1
-        });
+
       });
     </script>
     <script src="./helloworld.js"></script>
@@ -24,62 +22,74 @@
       <h2>Hello World!</h2>
       <p>プログラミングの世界へようこそいらっしゃいませ。</p>
     </div>
-    <div><button onclick="location.reload();">再描画</button></div>
     <div style="margin-top: 30px;">
       ここでは初めてのプログラミングと言うことで、コンソールと画面に「Hello World!」と言う、文字を表示します。<br />
       <p>
         <h3>コンソールプログラム</h3>
         <div>
           以下のプログラムを「helloworld.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 60px;">
+          <div>
+            <textarea class="lined" id="program-area1" style="width: 600px; height: 60px;">
 // 1. コンソールに実行結果を表示します。
 console.log("Hello World!");
 // console.log()は与えられた値をコンソールに出力します。
             </textarea>
-          </p>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
-          コンソールにHello World!が表示されましたか?<br />
-          console.log("Hello World!"); <br />
-          と言う処理はconsole.logと言う関数を使ってコンソールに「Hello World!」を表示してくださいと命令をしています。<br />
-          注意点は()の中に記述する値です。""(ダブルコーテーション, 二重引用符)を外してしまうとエラーになってしまいます。<br />
-          試しにHello World!のダブルコーテーションを削除してみましょう。<br />
+          </div>
+          <div style="width: 600px;"><button id="btn-execute1" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header1" style="color: red;">
+              </div>
+              <div id="message1" style="color: red;">
+              </div>
+            </p>
+          </div>
+          <div style="margin-top: 5px;">
+            <p>
+              プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
+              コンソールにHello World!が表示されましたか?<br />
+              console.log("Hello World!"); <br />
+              と言う処理はconsole.logと言うコマンド(関数)を使ってコンソールに「Hello World!」を表示してくださいと命令をしています。<br />
+              注意点は()の中に記述する値です。""(ダブルコーテーション, 二重引用符)を外してしまうとエラーになってしまいます。<br />
+              試しにHello World!のダブルコーテーションを削除してみましょう。
+            </p>
+          </div>
         </div>
       </p>
       <p>
         <h3>画面表示</h3>
         <div style="margin-top: 10px;">
-          <button onclick="execute()">プログラム実行!</button>
           <pre>
             <div id="output" style="font-size: 1.5rem">初期状態</div>
           </pre>
         </div>
-        <div><button onclick="location.reload();">再描画</button></div>
         <div>
           以下のプログラムを「helloworld.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined"  readonly style="width: 600px; height: 100px;">
+          <div>
+            <textarea class="lined" id="program-area2" style="width: 600px; height: 100px;">
 // 2. 画面に実行結果を表示します。
-const execute = () => {
-  const target = document.getElementById("output");
-  target.textContent = "Hello World!";
-}
+showMessage("Hello World!");
 // ブラウザ上でidがoutputという場所に代入された値を出力します。
           </textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute2" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header2" style="color: red;">
+              </div>
+              <div id="message2" style="color: red;">
+              </div>
+            </p>
+          </div>
           </p>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           「プログラム実行」ボタンをクリックしてください。<br />
           ボタンをクリックしたらHello World!が表示されましたか?<br />
-          ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはボタンをクリックした時にhelloworld.jsに書いた「execute」と言う関数を実行してくださいと命令しています。<br />
-          (関数については別途説明いたします。)<br />
-          関数executeでは&lt;div id="output"&gt;&lt;/div&gt;に「Hello World!」を表示してくださいと命令しています。<br />
-          const target = document.getElementById("output");<br />
-          はidがoutputの領域を取得してくださいと命令しています。<br />
-          target.textContent = "Hello World!";<br />
-          は取得した領域のtextContentに「Hello World!」と言う文字を設定してくださいと命令しています。<br />
-          textContentは領域内に表示する文字になります。<br />
-          <a href="https://qiita.com/RyBB/items/c87af2413c34f9367d00" target="_blank">textContentとinnerHTMLの違い</a>
+          これはボタンをクリックした時に「showMessage();」と言うコマンド(関数)(コマンド)を実行してくださいと命令しています。<br />
+          実際に表示されるメッセージは「showMessage("引数");」の引数に書かれた文字が表示されます。
+          (コマンド(関数)については別章にて説明いたします。)<br />
         </div>
       </p>
       <b>表示できたら「Hello World!」の代わりに別の文言を書いてみましょう。</b>

@@ -29,7 +29,7 @@ $(() => {
 
 
 let playMySynth = null;
-let sound = 1;
+let sound = 4;
 const startSound = (oscillator, note = 0, length = 1) => {
         playMySynth = PlayMySynth;
     // console.log(playMySynth);
@@ -87,6 +87,24 @@ const playB2 = () => {
 }
 const playC3 = () => {
     startSound(sound, 22, noteLength);
+}
+const playD3 = () => {
+    startSound(sound, 23, noteLength);
+}
+const playE3 = () => {
+    startSound(sound, 24, noteLength);
+}
+const playF3 = () => {
+    startSound(sound, 25, noteLength);
+}
+const playG3 = () => {
+    startSound(sound, 26, noteLength);
+}
+const playA3 = () => {
+    startSound(sound, 27, noteLength);
+}
+const playB3 = () => {
+    startSound(sound, 28, noteLength);
 }
 const PlayMySynth = {
     synth:  new MySynth(),

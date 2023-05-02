@@ -19,12 +19,13 @@
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
-                <li><a href="move_foward.html">前進します</a></li>
+                <li><a href="move_forward.html">前進します</a></li>
                 <li><a href="turn_right.html">曲がります</a></li>
-                <li><a href="move_foward2.html">前進します(2)</a></li>
+                <li><a href="move_forward2.html">前進します(2)</a></li>
                 <li><a href="turn_right2.html">曲がります(2)</a></li>
                 <li><a href="turn_around.html">迷路脱出</a></li>
                 <li><a href="make_noise.html">音を鳴らそう！</a></li>
+                <li><a href="../InitialStudy/index.html">javasctipt入門</a></li>
             </ul>
         </nav>
     </header>
@@ -34,24 +35,78 @@
                 音を出してみましょう。
             </div>
             <div>
-                コマンド: playC1(); で「ド」の音が出ます。<br>
                 以下のコマンドでいろんな音が出ます。<br>
-                ド: playC1(); /
-                レ: playD1(); /
-                ミ: playE1(); /
-                ファ: playF1(); /
-                ソ: playG1(); /
-                ラ: playA1(); /
-                シ: playB1(); / <br>
-                ド: playC2(); /
-                レ: playD2(); /
-                ミ: playE2(); /
-                ファ: playF2(); /
-                ソ: playG2(); /
-                ラ: playA2(); /
-                シ: playB2(); /
-                ド: playC3(); /<br>
-
+                <div>音階</div>
+                <table class="table table-bordered" style="border-color: black;">
+                    <tr>
+                        <td class="align-middle text-center">ド</td>
+                        <td class="align-middle text-center">レ</td>
+                        <td class="align-middle text-center">ミ</td>
+                        <td class="align-middle text-center">ファ</td>
+                        <td class="align-middle text-center">ソ</td>
+                        <td class="align-middle text-center">ラ</td>
+                        <td class="align-middle text-center">シ</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle text-center">playC1();</td>
+                        <td class="align-middle text-center">playD1();</td>
+                        <td class="align-middle text-center">playE1();</td>
+                        <td class="align-middle text-center">playF1();</td>
+                        <td class="align-middle text-center">playG1();</td>
+                        <td class="align-middle text-center">playA1();</td>
+                        <td class="align-middle text-center">playB1();</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle text-center">ド+1</td>
+                        <td class="align-middle text-center">レ+1</td>
+                        <td class="align-middle text-center">ミ+1</td>
+                        <td class="align-middle text-center">ファ+1</td>
+                        <td class="align-middle text-center">ソ+1</td>
+                        <td class="align-middle text-center">ラ+1</td>
+                        <td class="align-middle text-center">シ+1</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle text-center">playC2();</td>
+                        <td class="align-middle text-center">playD2();</td>
+                        <td class="align-middle text-center">playE2();</td>
+                        <td class="align-middle text-center">playF2();</td>
+                        <td class="align-middle text-center">playG2();</td>
+                        <td class="align-middle text-center">playA2();</td>
+                        <td class="align-middle text-center">playB2();</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle text-center">ド+2</td>
+                        <td class="align-middle text-center">レ+2</td>
+                        <td class="align-middle text-center">ミ+2</td>
+                        <td class="align-middle text-center">ファ+2</td>
+                        <td class="align-middle text-center">ソ+2</td>
+                        <td class="align-middle text-center">ラ+2</td>
+                        <td class="align-middle text-center">シ+2</td>
+                    </tr>
+                    <tr>
+                        <td class="align-middle text-center">playC3();</td>
+                        <td class="align-middle text-center">playD3();</td>
+                        <td class="align-middle text-center">playE3();</td>
+                        <td class="align-middle text-center">playF3();</td>
+                        <td class="align-middle text-center">playG3();</td>
+                        <td class="align-middle text-center">playA3();</td>
+                        <td class="align-middle text-center">playB3();</td>
+                    </tr>
+                </table>
+                <div>音の長さ(変数: noteLengthで設定します。)</div>
+                <table class="table table-bordered" style="border-color: black;">
+                    <tr>
+                        <td class="align-middle">noteLength = 1;</td>
+                        <td class="align-middle"> 1: 1秒です。任意の小数点も含む数値が使えます。</td>
+                    </tr>
+                </table>
+                <div>音色(変数: soundで設定します。)</div>
+                <table class="table table-bordered" style="border-color: black;">
+                    <tr>
+                        <td class="align-middle">sound = 1;</td>
+                        <td class="align-middle">音色は1,2,3,4の4種類あります。</td>
+                    </tr>
+                </table>
             </div>
         </div>
         <div style="width: 800px;">

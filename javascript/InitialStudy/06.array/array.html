@@ -24,7 +24,7 @@
       <h2>配列</h2>
       <p>いろんな値を引き出しの中にしまおう</p>
     </div>
-    <div><button onclick="location.reload();">再描画</button></div>
+    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px">
       ここで値を配列(引出し)に保存して、その結果をコンソールと画面に表示します。<br />
       <p>
@@ -42,8 +42,8 @@ for (let i = 0; i < myDrawer.length; i++) {
 }
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           引き出しの中身が表示されましたか?<br />
           このプログラムでは配列に値を格納して今度はその配列の中身を繰り返して表示します。<br />
           配列には複数の値が保管できます。<br />
@@ -73,8 +73,8 @@ let index = myDrawer.indexOf("DVD");
 console.log(index + "番目にDVDがありました。");
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           DVDが入っている引出しを見つけられましたか?<br />
           このプログラムでは何番目の引出しに「DVD」が入っているか探しています。<br />
           配列の要素の値がDVDの場合に表示しています。
@@ -96,7 +96,7 @@ for (let i = 0; i < amount.length; i++) {
 console.log("今週使った金額は" + total + "円です。")
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
+          <div><button onclick="">プログラム実行</button></div>
 
         </div>
       <p>
@@ -120,8 +120,8 @@ const execute = () => {
 // ブラウザ上でidがoutputという場所に代入された値を出力します。
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           <div style="margin-top: 10px;">
             <button onclick="execute()">プログラム実行!</button>
             <pre>
@@ -129,14 +129,14 @@ const execute = () => {
               <div id="output" style="font-size: 1.5rem">初期状態</div>
             </pre>
           </div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           「プログラム実行」ボタンをクリックしてください。<br />
           ボタンをクリックしたら配列(引出し)の中身が表示されましたか?<br />
           ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはボタンをクリックした時にarray.jsに書かれている「execute」と言う関数を実行してくださいと命令しています。<br />
-          (関数については別途説明いたします。)<br />
+          これはボタンをクリックした時にarray.jsに書かれている「execute」と言うコマンド(関数)を実行してくださいと命令しています。<br />
+          (コマンド(関数)については別途説明いたします。)<br />
           配列myDrawerに格納した内容を<br />
-          関数executeでは&lt;div id="output"&gt;&lt;/div&gt;に表示しています。<br />
+          コマンド(関数)executeでは&lt;div id="output"&gt;&lt;/div&gt;に表示しています。<br />
           \nは改行を意味するコードでこの値を設定することによりこの後の文字は改行されます。<br />
           const target = document.getElementById("output");<br />
           はidがoutputの領域を取得してくださいと命令しています。<br />

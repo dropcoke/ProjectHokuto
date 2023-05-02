@@ -20,12 +20,13 @@
         <nav>
             <ul>
                 <li><a href="index.html">ホーム</a></li>
-                <li><a href="move_foward.html">前進します</a></li>
+                <li><a href="move_forward.html">前進します</a></li>
                 <li><a href="turn_right.html">曲がります</a></li>
-                <li><a href="move_foward2.html">前進します(2)</a></li>
+                <li><a href="move_forward2.html">前進します(2)</a></li>
                 <li><a href="turn_right2.html">曲がります(2)</a></li>
                 <li><a href="turn_around.html">迷路脱出</a></li>
                 <li><a href="make_noise.html">音を鳴らそう！</a></li>
+                <li><a href="../InitialStudy/index.html">javasctipt入門</a></li>
             </ul>
         </nav>
     </header>
@@ -38,14 +39,14 @@
                     </div>
                     <div>
                         次のプログラムは3つ進んでから右に方向転換します。<br>
-                        方向展開した後に更にmoveFoward()を繰り返してゴールまで目指しましょう!
+                        方向展開した後に更にmoveForward()を繰り返してゴールまで目指しましょう!
                     </div>
                 </div>
                 <div style="width: 500px;">
                     <textarea class="lined" id="program-area" style="width: 500px; height: 380px;">
-for (let i = 0; i < 3; i++) {
-    moveFoward();
-    if(i == 2) {
+for (let i = 1; i <= 3; i++) {
+    moveForward();
+    if(i == 3) {
         turnRight();
     }
 }</textarea>

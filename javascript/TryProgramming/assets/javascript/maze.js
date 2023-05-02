@@ -95,7 +95,7 @@ let blockNavi = null;
 /**
  * 前に進む
  */
-const moveFoward = () => {
+const moveForward = () => {
     blockNavi.move();
 }
 /**
@@ -290,7 +290,6 @@ const BlockNavi = {
         this.moving = true;
         this.getCurrentElement().innerHTML = this.arrow;
         setTimeout(() => {this.moving = false;}, stepLength);
-        console.log(direction)
     },
     moving: false,
     waiting: [],

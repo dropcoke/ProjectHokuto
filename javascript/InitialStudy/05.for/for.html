@@ -24,7 +24,7 @@
       <h2>繰り返し処理</h2>
       <p></p>
     </div>
-    <div><button onclick="location.reload();">再描画</button></div>
+    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px">
       ここでは繰り返しの処理をして、その結果をコンソールと画面に表示します。<br />
       <p>
@@ -41,8 +41,8 @@ for (let i = 1; i <= 10; i++) {
 // iは繰り返しから脱出すると使えません。
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           1から10まで繰り返して値が表示されましたか?<br />
           このプログラムでは1から10回繰り返し処理を続けます。<br />
           プログラムとしては1からスタートして10以下の間繰り返すことになります。<br />
@@ -64,8 +64,8 @@ console.log("処理が終了しました。");
 console.log("最後に残ったのは" + number);
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           残りの在庫数が0になるまで表示されましたか?<br />
           このプログラムでは在庫が残っている間は(numberが0になるまで)繰り返し処理を続けます。<br />
           在庫は毎回3つずつ減っていきます。。<br />
@@ -88,8 +88,8 @@ console.log("処理が終了しました。");
 console.log("最後に残ったのは" + number);
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           残りの在庫数が0になるまで表示されましたか?<br />
           このプログラムでは在庫が残っている間は(numberが0になるまで)繰り返し処理を続けます。<br />
           在庫は毎回3つずつ減っていきます。<br />
@@ -123,8 +123,8 @@ console.log("処理が終了しました。");
 console.log("最後に残ったのは" + number2);
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           do~whileを使った場合は処理の後0ではなく-3になっていますね。<br />
           whileの条件判定する前にdoで一度在庫を減らす処理を実行してしまっているからです。
         </div>
@@ -140,8 +140,8 @@ while (number < 10) {
 console.log(number);
             </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           このプログラムは一番最初に書いたforの処理をwhileを使ってやってみました。<br />
           forで10回繰り返す処理で使用している変数iはfor (...) に続く { } の中だけで有効なため <br />
           外部の処理への影響が出ません。<br />
@@ -170,8 +170,8 @@ const execute = () => {
 // ブラウザ上でidがoutputという場所に代入された値を出力します。
           </textarea>
           </p>
-          <div><button onclick="location.reload();">再描画</button></div>
-          プログラムを書いたらファイルを保存して「再描画」ボタンをクリックしてください。<br />
+          <div><button onclick="">プログラム実行</button></div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
           <div style="margin-top: 10px;">
             <button onclick="execute()">プログラム実行!</button>
             <pre>
@@ -181,10 +181,10 @@ const execute = () => {
           「プログラム実行」ボタンをクリックしてください。<br />
           ボタンをクリックしたら繰り返し代入された値が表示されましたか?<br />
           ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはボタンをクリックした時にfor.jsに書かれている「execute」と言う関数を実行してくださいと命令しています。<br />
-          (関数については別途説明いたします。)<br />
+          これはボタンをクリックした時にfor.jsに書かれている「execute」と言うコマンド(関数)を実行してくださいと命令しています。<br />
+          (コマンド(関数)については別途説明いたします。)<br />
           1から20まで繰り返して代入した値を<br />
-          関数executeでは&lt;div id="output"&gt;&lt;/div&gt;に表示しています。<br />
+          コマンド(関数)executeでは&lt;div id="output"&gt;&lt;/div&gt;に表示しています。<br />
           \nは改行を意味するコードでこの値を設定することによりこの後の文字は改行されます。<br />
           const target = document.getElementById("output");<br />
           はidがoutputの領域を取得してくださいと命令しています。<br />
