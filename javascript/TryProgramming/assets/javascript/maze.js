@@ -297,6 +297,9 @@ const BlockNavi = {
     out: false,
     finished: false,
     move() {
+        if (this.out) {
+            return;
+        }
         if (this.moving) {
             this.waiting.push(setTimeout(() => {this.move();}, this.currentLength));
             this.currentLength = stepLength + 10;
