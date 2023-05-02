@@ -24,15 +24,13 @@
       <h2>変数・型</h2>
       <p>値を箱にしまって使いまわします。</p>
     </div>
-    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px">
-      ここでは変数に値を代入して、コンソールと画面に代入した値を表示します。<br />
+      ここでは変数に値を代入して、コンソールと画面に代入した値を表示します。<br>
       <p>
         <h3>コンソールプログラム</h3>
         <div>
-          以下のプログラムを「variable.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 250px;">
+          <div>
+            <textarea class="lined" id="program-area1" style="width: 600px; height: 250px;">
 // 私の箱に初期値を代入します
 let myBox = "ぬいぐるみ";
 // 私の箱の中身を出力します
@@ -50,79 +48,110 @@ myBox = "プレイステーション"
 myBox += " Switch"
 console.log(myBox);
             </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          コンソールに変数の値が表示されましたか?<br />
-          変数とは let myBox = "ぬいぐるみ";で書いたmyBoxになります。<br />
-          変数は値をしまっておく箱と考えてください。<br />
-          変数に値をしまうために=(イコール)を使います。=を使って値を設定することを代入と言います。<br />
-          プログラムではこの変数を使って、いろんな処理をします。<br />
-          今回はmyBoxと言う箱にいろんな文字を入れていきます。<br />
-          2行目 let myBox = "ぬいぐるみ";<br />
-          ではまず「myBox」をこれから使いますと宣言してmyBoxに「ぬいぐるみ」をしまいます。<br />
-          console.log()はmyBoxと言う箱に入った値を取り出してコンソールに表示してくださいと命令しています。<br />
-          一度宣言した変数はその中身を変えることができます。(letは英単語で「~とする」と言う意味で使用されているようです)<br />
-          また、変数に値を追加することもできます。<br />
-          10, 11行目と14, 15行目は変数myBox(プレイステーション)に「Switch」を追加してくださいと命令していて、両者とも同じ意味で同じ結果が得られます。<br />
+          </div>
+          <div style="width: 600px;"><button id="btn-execute1" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header1" style="color: red;">
+              </div>
+              <div id="message1" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          コンソールに変数の値が表示されましたか?<br>
+          変数とは let myBox = "ぬいぐるみ";で書いたmyBoxになります。<br>
+          変数は値をしまっておく箱と考えてください。<br>
+          変数に値をしまうために=(イコール)を使います。=を使って値を設定することを代入と言います。<br>
+          プログラムではこの変数を使って、いろんな処理をします。<br>
+          今回はmyBoxと言う箱にいろんな文字を入れていきます。<br>
+          2行目 let myBox = "ぬいぐるみ";<br>
+          ではまず「myBox」をこれから使いますと宣言してmyBoxに「ぬいぐるみ」をしまいます。<br>
+          console.log()はmyBoxと言う箱に入った値を取り出してコンソールに表示してくださいと命令しています。<br>
+          一度宣言した変数はその中身を変えることができます。(letは英単語で「~とする」と言う意味で使用されているようです)<br>
+          また、変数に値を追加することもできます。<br>
+          10, 11行目と14, 15行目は変数myBox(プレイステーション)に「Switch」を追加してくださいと命令していて、両者とも同じ意味で同じ結果が得られます。<br>
       </div>
       <h4>constで変数を宣言する。</h4>
       <div>
-        以下のプログラムを「variable.js」に書いてみましょう。<br />
-        <p>
-          <textarea class="lined" readonly style="width: 600px; height: 80px;">
+        <div>
+          <textarea class="lined" id="program-area2" style="width: 600px; height: 80px;">
 // constで宣言された変数
 const fatherBox = "秘密のおもちゃ";
 console.log(fatherBox);
 fatherBox = "パートナーには内緒";
-console.log(fatherBox);
-        </textarea>
-        </p>
-        <div><button onclick="">プログラム実行</button></div>
-        プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-        エラーが表示されましたか?<br />
-        let の他にjavascriptではconstを使って変数を宣言することができます。<br />
-        ただし、constを使用して宣言された変数は一度代入した値を変更することができません。<br />
-        constはconstantの略称で絶え間なく続くと言うことで同じプログラム内では常に同じ状態を保持します。<br />
+console.log(fatherBox);</textarea>
+        </div>
+          <div style="width: 600px;"><button id="btn-execute2" style="float: right;">プログラム実行</button></div>
+            <br>
+          <div>
+          <p>
+            <div id="error-header2" style="color: red;">
+            </div>
+            <div id="message2" style="color: red;">
+            </div>
+          </p>
+        </div>
+        「プログラム実行」ボタンをクリックしてください。<br>
+        エラーが表示されましたか?<br>
+        let の他にjavascriptではconstを使って変数を宣言することができます。<br>
+        ただし、constを使用して宣言された変数は一度代入した値を変更することができません。<br>
+        constはconstantの略称で絶え間なく続くと言うことで同じプログラム内では常に同じ状態を保持します。<br>
         何らか変化が必要な変数を使用する場合はletを使用してください。
       </div>
       <h4>数値</h4>
       <div>
-        以下のプログラムを「variable.js」に書いてみましょう。<br />
-        <p>
-          <textarea class="lined" readonly style="width: 600px; height: 50px;">
+        <div>
+          <textarea class="lined" id="program-area3" style="width: 600px; height: 50px;">
 // 数値
 let myNumber = 1;
-console.log(myNumber);
-        </textarea>
-        </p>
-        <div><button onclick="">プログラム実行</button></div>
-        プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-        数値を代入する場合は引用符は必要ありません。<br />
+console.log(myNumber);</textarea>
+        </div>
+        <div style="width: 600px;"><button id="btn-execute3" style="float: right;">プログラム実行</button></div>
+          <br>
+        <div>
+          <p>
+            <div id="error-header3" style="color: red;">
+            </div>
+            <div id="message3" style="color: red;">
+            </div>
+          </p>
+        </div>
+        「プログラム実行」ボタンをクリックしてください。<br>
+        数値を代入する場合は引用符は必要ありません。<br>
       </div>
       <h4>true false</h4>
       <div>
-        以下のプログラムを「variable.js」に書いてみましょう。<br />
-        <p>
-          <textarea class="lined" readonly style="width: 600px; height: 100px;">
+        以下のプログラムを「variable.js」に書いてみましょう。<br>
+        <div>
+          <textarea class="lined" id="program-area4" style="width: 600px; height: 100px;">
 // 真偽
 let result = true;
 console.log(result);
 // 真偽
 result = false;
-console.log(result);
-        </textarea>
-        </p>
-        <div><button onclick="">プログラム実行</button></div>
-        プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-        真偽型(boolean)を代入する場合は引用符は必要ありません。<br />
-        変数に代入した文字、数値、true/false(真偽)の値は違うデータ型として扱われます。<br />
-        数値一つ取っても整数と小数点がつく数値では型が違い、プログラミングは多数の型を扱います。<br />
-        データ型によりそれぞれ機能が違ってきて、このデータ型を理解することによってプログラミングへの理解度も上がっていきます。<br />
-        javascriptでは明示的なデータ型を指定することはないのですが、<br />
+console.log(result);</textarea>
+        </div>
+        <div style="width: 600px;"><button id="btn-execute4" style="float: right;">プログラム実行</button></div>
+        <br>
+        <div>
+          <p>
+            <div id="error-header4" style="color: red;">
+            </div>
+            <div id="message4" style="color: red;">
+            </div>
+          </p>
+        </div>
+        「プログラム実行」ボタンをクリックしてください。<br>
+        真偽型(boolean)を代入する場合は引用符は必要ありません。<br>
+        変数に代入した文字、数値、true/false(真偽)の値は違うデータ型として扱われます。<br>
+        数値一つ取っても整数と小数点がつく数値では型が違い、プログラミングは多数の型を扱います。<br>
+        データ型によりそれぞれ機能が違ってきて、このデータ型を理解することによってプログラミングへの理解度も上がっていきます。<br>
+        javascriptでは明示的なデータ型を指定することはないのですが、<br>
         同じような処理でも型が違う値を使うことによって結果が変わることもあります。
-        <p>
-          <textarea class="lined" readonly style="width: 600px; height: 170px;">
+      <div>
+        <textarea class="lined" id="program-area5" style="width: 600px; height: 170px;">
 // 数値と文字の加算
 let yourNumber = 1;
 console.log("yourNumber: " + yourNumber);
@@ -131,70 +160,107 @@ console.log("yourNumber + 2 =  " + yourNumber);
 let hisNumber = "1";
 console.log("hisNumber: " + hisNumber);
 hisNumber = hisNumber + "2";
-console.log("hisNumber + "2" = " + hisNumber);
+console.log("hisNumber + 2 = " + hisNumber);
 hisNumber = hisNumber + 33;
-console.log("hisNumber + 33 = " + hisNumber);
-          </textarea>
+console.log("hisNumber + 33 = " + hisNumber);</textarea>
+      </div>
+      <div style="width: 600px;"><button id="btn-execute5" style="float: right;">プログラム実行</button></div>
+      <br>
+      <div>
+        <p>
+          <div id="error-header5" style="color: red;">
+          </div>
+          <div id="message5" style="color: red;">
+          </div>
         </p>
+      </div>
       <h4>変数名</h4>
       <div>
-        以下のプログラムを「variable.js」に書いてみましょう。<br />
-        <p>
-          <textarea class="lined" readonly style="width: 600px; height: 30px;">
+        <div>
+          <textarea class="lined" id="program-area6" style="width: 600px; height: 30px;">
 // 変数名を数値で始めた場合
-let 1Box = "ぬいぐるみ";
-        </textarea>
-        </p>
-        <div><button onclick="">プログラム実行</button></div>
-        プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-        エラーが表示されましたか?<br />
+let 1Box = "ぬいぐるみ";</textarea>
+        </div>
+        <div style="width: 600px;"><button id="btn-execute6" style="float: right;">プログラム実行</button></div>
+        <br>
+        <div>
+          <p>
+            <div id="error-header6" style="color: red;">
+            </div>
+            <div id="message6" style="color: red;">
+            </div>
+          </p>
+        </div>
+        「プログラム実行」ボタンをクリックしてください。<br>
+        エラーが表示されましたか?<br>
         数値から始まる名前の変数は利用できません。
       </div>
       <div>
-      以下のプログラムを「variable.js」に書いてみましょう。<br />
-        <p>
-          <textarea class="lined" readonly style="width: 600px; height: 30px;">
+        <div>
+          <textarea class="lined" id="program-area7" style="width: 600px; height: 30px;">
 // 変数名にスペースが入る場合
-let my box = "ぬいぐるみ";
-          </textarea>
+let my box = "ぬいぐるみ";</textarea>
+        </div>
+        <div style="width: 600px;"><button id="btn-execute7" style="float: right;">プログラム実行</button></div>
+        <br>
+        <div>
+          <p>
+            <div id="error-header7" style="color: red;">
+            </div>
+            <div id="message7" style="color: red;">
+            </div>
           </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          エラーが表示されましたか?<br />
-          途中でスペースが入る名前の変数は利用できません。<br />
-          変数名はルールがあって利用できない文字もあります。<br />
+        </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          エラーが表示されましたか?<br>
+          途中でスペースが入る名前の変数は利用できません。<br>
+          変数名はルールがあって利用できない文字もあります。<br>
           ルールは言語によって違うこともありますが、javascriptについては<a href="https://jsprimer.net/basic/variables/" target="_blank">こちらを参考にしてください。</a>
         </div>
         <h4>文字が引用符で括られれていない場合</h4>
         <div>
-          以下のプログラムを「variable.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 30px;">
+          <div>
+            <textarea class="lined" id="program-area8" style="width: 600px; height: 30px;">
 // 引用符なしで代入します。
-let hisBox = yourBox;
-          </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。
-          エラーが表示されましたか?<br />
-          引用符で括られない文字は変数として扱われます。<br />
+let hisBox = yourBox;</textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute8" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header8" style="color: red;">
+              </div>
+              <div id="message8" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。
+          エラーが表示されましたか?<br>
+          引用符で括られない文字は変数として扱われます。<br>
           その場合は宣言されていない変数とされエラーとなってしまいます。
         </div>
         <h4>宣言の制約</h4>
         <div>
-          以下のプログラムを「variable.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 50px;">
+          <div>
+            <textarea class="lined" id="program-area9" style="width: 600px; height: 50px;">
 // constで宣言された変数
 let motherBox = "へそくり";
-let motherBox = "預金通帳";
-          </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          エラーが表示されましたか?<br />
-          let、constを使って複数回変数を宣言することはできません。<br />
-          一度宣言した変数はそのまま利用してください。<br />
+let motherBox = "預金通帳";</textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute9" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header9" style="color: red;">
+              </div>
+              <div id="message9" style="color: red;">
+              </div>
+            </p>
+          </div>
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br>
+          エラーが表示されましたか?<br>
+          let、constを使って複数回変数を宣言することはできません。<br>
+          一度宣言した変数はそのまま利用してください。<br>
         </div>
           <!-- <p>
             <textarea class="lined" readonly style="width: 600px; height: 170px;">
@@ -212,76 +278,72 @@ console.log(isCorrect);
             </textarea>
           </p> -->
           <!-- <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          javascriptでは文字に数値を加算する場合は文字に自動変換されます。<br />
-          その逆で数値に文字を加算する場合は文字に自動変換されます。<br />
-          (計算式については別途説明いたします)<br />
-          他の言語ではエラーになる場合もあります。<br />
-          データ型についてはjavascriptでは制約はそれほど厳しくありませんが言語によってかなり制約が厳しいものもあります。<br />
-          お時間があるときに調べてみてください。<br />
+          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br>
+          javascriptでは文字に数値を加算する場合は文字に自動変換されます。<br>
+          その逆で数値に文字を加算する場合は文字に自動変換されます。<br>
+          (計算式については別途説明いたします)<br>
+          他の言語ではエラーになる場合もあります。<br>
+          データ型についてはjavascriptでは制約はそれほど厳しくありませんが言語によってかなり制約が厳しいものもあります。<br>
+          お時間があるときに調べてみてください。<br>
           参考サイト: <a href="https://e-words.jp/w/%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B.html#:~:text=%E3%83%87%E3%83%BC%E3%82%BF%E5%9E%8B%E3%80%90data%20type%E3%80%91,%E8%A6%8F%E7%B4%84%E3%82%92%E5%AE%9A%E3%82%81%E3%81%9F%E3%82%82%E3%81%AE%E3%80%82" target="_blank">e-Words</a>
         </div> -->
       </p>
       <p>
         <h3>画面表示</h3>
-
         <div>
-          以下のプログラムを「variable.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 400px;">
+          <div>
+            <textarea class="lined" id="program-area10" style="width: 600px; height: 400px;">
 // 一番最初のプログラムを削除した場合は場合はコピーしてこの前かこの後に貼り付けてください。
 // 2. 画面に実行結果を表示します。
-const execute = () => {
-    // 私の箱に初期値を代入します
-    let myBox = "ぬいぐるみ";
-    // 私の箱の中身を変えました
-    myBox = "ミニカー";
-    // 中身を追加します (その1)
-    myBox = "プレイステーション"
-    myBox = myBox + " Switch";
-    // 中身を追加します (その1)
-    myBox = "プレイステーション"
-    myBox += " Switch"
-    // 数値
-    let myNumber = 1;
-    // 数値と文字の加算
-    let yourNumber = 1;
-    yourNumber = yourNumber + 2;
-    const target = document.getElementById("output");
-    target.textContent = myBox;
-    // target.textContent = myBox;
-    // target.textContent = myNumber;
-    // target.textContent = yourNumber;
-}
-// ブラウザ上でidがoutputという場所に代入された値を出力します。
-          </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
+// 私の箱に初期値を代入します
+let myBox = "ぬいぐるみ";
+// 私の箱の中身を変えました
+myBox = "ミニカー";
+// 中身を追加します (その1)
+myBox = "プレイステーション"
+myBox = myBox + " Switch";
+// 中身を追加します (その1)
+myBox = "プレイステーション"
+myBox += " Switch"
+// 数値
+let myNumber = 1;
+// 数値と文字の加算
+let yourNumber = 1;
+yourNumber = yourNumber + 2;
+showMessage(myBox);
+
+// showMessage(myBox);
+// showMessage(myNumber);
+// showMessage(yourNumber);</textarea>
+            </div>
+          <div style="width: 600px;"><button id="btn-execute10" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header10" style="color: red;">
+              </div>
+              <div id="message10" style="color: red;">
+              </div>
+            </p>
+          </div>
+
           <div style="margin-top: 10px;">
-            <button onclick="execute()">プログラム実行!</button>
             <pre>
               <div id="output" style="font-size: 1.5rem">初期状態</div>
             </pre>
           </div>
-          「プログラム実行」ボタンをクリックしてください。<br />
-          ボタンをクリックしたら代入した値が表示されましたか?<br />
-          ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはボタンをクリックした時にvariables.jsに書かれている「execute」と言うコマンド(関数)を実行してくださいと命令しています。<br />
-          (コマンド(関数)については別途説明いたします。)<br />
-          コマンド(関数)executeでは&lt;div id="output"&gt;&lt;/div&gt;に代入した変数の値を表示してくださいと命令しています。<br />
-          const target = document.getElementById("output");<br />
-          はidがoutputの領域を取得してくださいと命令しています。<br />
-          target.textContent = myBox(変数名);<br />
-          は取得した領域のtextContentに代入した変数の値を設定してくださいと命令しています。<br />
-          textContentは領域内に表示する文字になります。<br />
-          <a href="https://qiita.com/RyBB/items/c87af2413c34f9367d00" target="_blank">textContentとinnerHTMLの違い</a>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          ボタンをクリックしたら代入した値が表示されましたか?<br>
+          ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br>
+          これはボタンをクリックした時に「showMessage();」と言うコマンド(関数)(コマンド)を実行してくださいと命令しています。<br>
+          「showMessage(引数);」は()括弧内に書かれている値(引数)を画面に表示してくださいと命令しています。<br>
+          (コマンド(関数)については別途説明いたします。)<br>
         </div>
       </p>
       <b>表示できたら変数にいろんな値を代入してみましょう。</b>
     </div>
     <!-- <div style="margin: 20px;">
-      <a id="html">HTMLのbodyの内容</a><br />
+      <a id="html">HTMLのbodyの内容</a><br>
       <textarea class="lined" id="body" style="width: 800px;height: 600px;" readonly></textarea>
     </div> -->
     <footer><a href="../index.html">&lt; 最初に戻る</a></footer>
