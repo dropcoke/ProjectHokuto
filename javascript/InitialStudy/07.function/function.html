@@ -22,19 +22,18 @@
     <header><a href="../index.html">&lt; 最初に戻る</a></header>
     <div>
       <h2>コマンド(関数)</h2>
-      <p>自分で作った処理を再利用しよう</p>
-      <p>コマンド(関数)とは与えられた値をもとに。定められた独自の処理を実行してその結果を返します。</p>
+      <div>自分で作った処理を再利用しよう</div>
+      <div>コマンド(関数)とは与えられた値をもとに、定められた独自の処理を実行してその結果を返します。</div>
+      <div>(値が与えられない場合や、結果を返さないで処理する場合もあります。)</div>
     </div>
-    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px">
-      ここでコマンド(関数)を作成して実行した結果を、コンソールと画面に表示します。<br />
-      <p>
+      ここではコマンド(関数)を作成して実行した結果を、コンソールと画面に表示します。<br>
+      <div>
         <h3>コンソールプログラム</h3>
         <h4>引数がなく全ての商品を取得するコマンド(関数)</h4>
         <div>
-          以下のプログラムを「function.js」に書いてみましょう。
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 360px;">
+          <div>
+            <textarea class="lined" id="program-area1" style="width: 600px; height: 360px;">
 // 自販機のジュースのリスト
 const drink = [
     {price: 120, name: "缶コーヒー"}, // 0
@@ -55,37 +54,43 @@ const getJuiceList = () => {
     }
     return vendingMachine;
 }
-
 // 1. 引数がないパターン
 console.log(getJuiceList());
-            </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          自動販売機の中身が見れましたか?<br />
-          getJuiceListと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br />
-          そもそもコマンド(関数)って何?<br />
-          与えられた値(引数とかパラメータなどと言います)をもとに、<br />
-          定められた独自の処理を実行し、その結果を返す命令のことです。<br />
-          実際には引数が与えられなかったり、その結果を返さないようなコマンド(関数)も利用できます。<br />
-          上記のコマンド(関数)には引数がありません。<br />
-          今回作ったコマンド(関数)getJuiceListではdrinkと言う配列に格納した要素を展開して<br />
-          その情報を変数に代入して返します。(return vendingMachine; がそれです。 )<br />
-          今までは結果を表示するために画面を再描画する必要がありましたが、<br />
-          コマンド(関数)を使うと下のボタンをクリックすることで同じ処理を実行することができます。<br />
-          <div><button onclick="console.log(getJuiceList());">getJuiceListを実行する。</button></div>
-          結果を返さない場合を試してみてください。<br />
-          20行目の<br />
-          return vendingMachine; <br />
-          を削除してください。17行目のプログラムを改行して<br />
-          console.log("今は" +  drink[i].name + "取り出しています。" );<br />
-          を18行目に書いて再描画してください。
+// 再度利用できます。
+console.log(getJuiceList());</textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute1" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header1" style="color: red;">
+              </div>
+              <div id="message1" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          自動販売機の中身が見れましたか?<br>
+          getJuiceListと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br>
+          そもそもコマンド(関数)って何?<br>
+          与えられた値(引数とかパラメータなどと言います)をもとに、<br>
+          定められた独自の処理を実行し、その結果を返す命令のことです。<br>
+          実際には引数が与えられなかったり、その結果を返さないようなコマンド(関数)も利用できます。<br>
+          上記のコマンド(関数)には引数がありません。<br>
+          今回作ったコマンド(関数)getJuiceListではdrinkと言う配列に格納した要素を展開して<br>
+          その情報を変数に代入して返します。(return vendingMachine; がそれです。 )<br>
+          コマンド(関数)を使うと同じ処理を再利用して実行することができます。<br>
+          また結果を返さない場合を試してみてください。<br>
+          19行目の<br>
+          return vendingMachine; <br>
+          を削除してください。16行目のプログラムを改行して<br>
+          console.log("今は" +  drink[i].name + "取り出しています。" );<br>
+          を17行目に書いてプログラムを実行してください。
         </div>
         <h4>引数から商品を取得するコマンド(関数)</h4>
         <div>
-          以下のプログラムを「function.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 300px;">
+          <div>
+            <textarea class="lined" id="program-area2" style="width: 600px; height: 400px;">
 const drink = [
     {price: 120, name: "缶コーヒー"}, // 0
     {price: 120, name: "オレンジジュース"} , // 1
@@ -110,23 +115,32 @@ function getJuice(number) {
     return vendingMachine;
 }
 // 2. 引数にジュースの番号を設定します。
-console.log(getJuice(1));
-          </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          自動販売機のどの飲料が取得できましたか?<br />
-          getJuiceと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br />
-          今回作ったコマンド(関数)getJuiceListではdrinkと言う配列に格納した要素の中から一つを取得して<br />
-          その情報を変数に代入して返します。(return vendingMachine; がそれです。 )<br />
-          下のボタンをクリックすることでどんな飲み物が取得できるのか試してみてください。<br />
-          <div><button onclick="console.log(getJuice(Math.floor(Math.random() * 5 + 1)));">getJuiceを実行する。</button></div>
+console.log(getJuice(1));</textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute2" style="float: right;">プログラム実行</button></div>
+            <br>
+          <div>
+            <p>
+              <div id="error-header2" style="color: red;">
+              </div>
+              <div id="message2" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          自動販売機のどの飲料が取得できましたか?<br>
+          getJuiceと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br>
+          今回作ったコマンド(関数)getJuiceListではdrinkと言う配列に格納した要素の中から一つを取得して<br>
+          その情報を変数に代入して返します。(return vendingMachine; がそれです。 )<br>
+          下記のコマンドを実行してどんな飲み物が取得できるのか試してみてください。<br>
+          <pre>
+            console.log(getJuice(Math.floor(Math.random() * 5 + 1)));
+          </pre>
         </div>
         <h4>引数から商品と投入金額を設定して購入状態を取得するコマンド(関数)</h4>
         <div>
-          以下のプログラムを「function.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 480px;">
+          <div>
+            <textarea class="lined" id="program-area3" style="width: 600px; height: 480px;">
 const drink = [
     {price: 120, name: "缶コーヒー"}, // 0
     {price: 120, name: "オレンジジュース"} , // 1
@@ -158,35 +172,43 @@ const buyJuice = (number, pay) => {
     return message;
 }
 // 3. ジュースの番号を設定してお金を投入します。
-console.log(buyJuice(1, 100));
-            </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          自動販売機のどの飲料を選んでちゃんと購入できましたかd?<br />
-          buyJuiceと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br />
-          今回作ったコマンド(関数)buyJuiceではdrinkと言う配列に格納した要素の中から一つ何かを取得して、<br />
-          金額を支払い実際に購入しようとします。<br />
-          投入金額が少なければ購入できませんし、投入金額が多ければお釣りが発生します。<br />
-          選択した飲料の情報と購入状況を変数に代入して返します。(return message; がそれです。 )<br />
-          下のボタンをクリックすることでどんな飲み物が購入できたるのか試してみてください。<br />
-          <div><button onclick="console.log(buyJuice(Math.floor(Math.random() * 5 + 1), 120));">buyJuiceを実行する。</button></div>
+console.log(buyJuice(1, 100));</textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute3" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header3" style="color: red;">
+              </div>
+              <div id="message3" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          自動販売機のどの飲料を選んでちゃんと購入できましたか?<br>
+          buyJuiceと言うコマンド(関数)を作って、そのコマンド(関数)を呼び出します。<br>
+          今回作ったコマンド(関数)buyJuiceではdrinkと言う配列に格納した要素の中から一つ何かを取得して、<br>
+          金額を支払い実際に購入しようとします。<br>
+          投入金額が少なければ購入できませんし、投入金額が多ければお釣りが発生します。<br>
+          選択した飲料の情報と購入状況を変数に代入して返します。(return message; がそれです。 )<br>
+          下記のコマンドを実行してどんな飲み物が購入できたるのか試してみてください。<br>
         </div>
-      </p>
-      <p>
+        <pre>
+          console.log(buyJuice(Math.floor(Math.random() * 5 + 1), 120));
+        </pre>
+      </div>
+      <div>
         <h3>画面表示</h3>
-
         <div>
-          以下のプログラムを「function.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 700px;">
+          <div>
+            <textarea class="lined" id="program-area4" style="width: 600px; height: 600px;">
 const drink = [
-    {price: 120, name: "缶コーヒー"}, // 0
-    {price: 120, name: "オレンジジュース"} , // 1
-    {price: 150, name: "ミックスジュース"}, // 2
-    {price: 140, name: "おーいお茶"}, // 3
-    {price: 100, name: "南アルプス天然水"}, // 4
-    {price: 120, name: "ウィルキンソン強炭酸水"}]; // 5
+{price: 120, name: "缶コーヒー"}, // 0
+{price: 120, name: "オレンジジュース"} , // 1
+{price: 150, name: "ミックスジュース"}, // 2
+{price: 140, name: "おーいお茶"}, // 3
+{price: 100, name: "南アルプス天然水"}, // 4
+{price: 120, name: "ウィルキンソン強炭酸水"}]; // 5
 // コマンド(関数)を宣言します。
 // 3. ジュースを選んでお金を投入して購入します。
 const buyJuice = (number, pay) => {
@@ -212,49 +234,59 @@ const buyJuice = (number, pay) => {
 }
 // 画面に実行結果を表示します。
 // プログラム実行
-const execute = () => {
-    // ジュースを選択
-    const selectedJuice = document.getElementById("number").value;
-    // お金を投入
-    const payment = document.getElementById("payment").value;
-    const target = document.getElementById("output");
-    if (Number(selectedJuice) < 1 || drink.length <= Number(selectedJuice)) {
-        target.textContent = "その飲料はありません。"
-        return;
-    }
-    // target.textContent = getJuiceList();
-    // target.textContent = getJuice(selectedJuice);
-    target.textContent = buyJuice(selectedJuice, payment);
+
+// ジュースを選択
+const selectedJuice = selectJuice();
+// お金を投入
+const payment = throwCoin();
+if (Number(selectedJuice) < 1 || drink.length <= Number(selectedJuice)) {
+    target.textContent = "その飲料はありません。"
 }
-          </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          <div style="margin-top: 10px;">
-            <button onclick="execute()">プログラム実行!</button>
+showMessage(buyJuice(selectedJuice, payment));</textarea>
+          </div>
+          <div style="width: 600px;"><button id="btn-execute4" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header4" style="color: red;">
+              </div>
+              <div id="message4" style="color: red;">
+              </div>
+            </p>
+          </div>
+          <div style="margin-top: 10px; margin-bottom: 10px;">
             <pre>
               <div id="output" style="font-size: 1.5rem">初期状態</div>
             </pre>
+            <table style="font-size: 0.8rem; margin:5px; border-collapse: collapse;">
+              <tr style="padding: 0;">
+                <th style="border: solid 1px; margin: 0;">商品(番号)</th>
+                <td style="border: solid 1px; margin: 0;">1: 缶コーヒー</td>
+                <td style="border: solid 1px; margin: 0;">2: オレンジジュース</td>
+                <td style="border: solid 1px; margin: 0;">3: ミックスジュース</td>
+                <td style="border: solid 1px; margin: 0;">4: おーいお茶</td>
+                <td style="border: solid 1px; margin: 0;">5: 南アルプス天然水</td>
+                <td style="border: solid 1px; margin: 0;">6: ウィルキンソン強炭酸水</td>
+              </tr>
+              <tr style="padding: 0;">
+                <th style="border: solid 1px; margin: 0;">金額</th>
+                <td style="border: solid 1px; margin: 0; text-align: right;">120</td>
+                <td style="border: solid 1px; margin: 0; text-align: right;">120</td>
+                <td style="border: solid 1px; margin: 0; text-align: right;">150</td>
+                <td style="border: solid 1px; margin: 0; text-align: right;">140</td>
+                <td style="border: solid 1px; margin: 0; text-align: right;">100</td>
+                <td style="border: solid 1px; margin: 0; text-align: right;">120</td>
+              </tr>
+            </table>
             商品番号: <input type="number" id="number" value="1" /> 投入金額: <input type="number" id="payment" value="100" />
           </div>
-          「プログラム実行」ボタンをクリックしてください。<br />
-          ボタンをクリックしたら代入した値が表示されましたか?<br />
-          ページのソースに&lt;button onclick="execute()"&gt;と書かれている部分があります。<br />
-          これはfunction.jsに書かれている「execute」と言うコマンド(関数)を実行してくださいと命令しています。<br />
-          コマンド(関数)executeでは&lt;input type="number" id="number" value="1" /&gt;で設定した商品番号と<br />
-          &lt;input type="number" id="payment" value="100" /&gt;で設定した金額を引数にして<br />
-          コマンド(関数)buyJuiceを実行して、その結果の飲料情報と購入状況を<br />
-          &lt;div id="output"&gt;&lt;/div&gt;に表示してくださいと命令しています。<br />
-          const target = document.getElementById("output");<br />
-          はidがoutputの領域を取得してくださいと命令しています。<br />
-          target.textContent = buyJuice(selectedJuice, payment);<br />
-          は取得した領域のtextContentに選択した飲料の情報と購入状況を設定してくださいと命令しています。<br />
-          textContentは領域内に表示する文字になります。<br />
-          <a href="https://qiita.com/RyBB/items/c87af2413c34f9367d00" target="_blank">textContentとinnerHTMLの違い</a><br />
-          またdrink.indexOf(selectedJuice)で選択商品が存在しているか確認して、<br />
-          ない場合はその商品がないメッセージを表示します。
+          商品番号と投入金額を入力して「プログラム実行」ボタンをクリックしてください。<br>
+          ボタンをクリックしたら選んだジュースを購入できましたか?<br>
+          これはボタンをクリックした時に入力した番号から商品を選んで、その価格を取得します。<br>
+          投入金額が不足しているか、またはお釣りが発生するか確認して、購入結果を返します。<br>
+          また、商品の番号が照合できない場合はエラーになります。
         </div>
-      </p>
+      </div>
       <b>いろんな値を入力して飲料が購入できるか試してみましょう。</b>
     </div>
     <footer><a href="../index.html">&lt; 最初に戻る</a></footer>

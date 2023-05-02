@@ -31,7 +31,7 @@
         <h4>あなたの好きな色が正解の色になりますか?</h4>
         <div>
           <div>
-            <textarea class="lined" id="program-area1" style="width: 600px; height: 170px;">
+            <textarea class="lined" id="program-area1" style="width: 600px; height: 180px;">
 // 答えの色
 const answerColor = "green";
 // お気に入りの色
@@ -39,8 +39,9 @@ let favoriteColor = "blue";
 // 正解
 if (answerColor === favoriteColor) {
     console.log("緑があたりです");
-} else // 不正解
-{
+}
+// 不正解
+else {
     console.log("残念ですがハズレの色です")
 }</textarea>
           </div>
@@ -292,11 +293,12 @@ showColor(selectedColor, message);</textarea>
               <div id="output" style="border: solid 1px;width: 300px; height: 200px;">初期状態</div>
             </div>
           </div>
-          「プログラム実行」ボタンをクリックしてください。<br>
+          色を入力して「プログラム実行」ボタンをクリックしてください。<br>
           ボタンをクリックしたら背景色が変更され、何色の紙が選ばれたか表示されましたか?<br>
-          これはボタンをクリックした時に指定した色が選択可能であればその色を表示してくださいと命令しています。<br>
-          入力された色がプログラムで定義された選択色に存在した場合、<br>
+          これはボタンをクリックした時に入力された色がプログラムで定義された選択色に存在した場合、<br>
           パネルの背景色をその色に変更してどの色の紙が選択されたか表示してくださいと命令しています。<br>
+          「showColor(引数1, 引数2);」は()括弧内に書かれている引数1の色で描画して、<br>
+          引数2のメッセージを画面に表示してくださいと命令しています。<br>
         </div>
       </div>
       <b>色を変えてプログラムを実行してみよう!</b>

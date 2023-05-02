@@ -559,6 +559,7 @@ else if (formula === "3") {
   resultValue = firstValue * secondValue;
 }
 else {
+  // 分母が0の時は計算しない
   if (secondValue === 0) {
     resultValue = 0;
   }
@@ -597,7 +598,7 @@ showResult(resultValue);</textarea>
               </div>
             </p>
           </div>
-          「プログラム実行」ボタンをクリックしてください。<br>
+          1番目と2番目の入力ボックスに数値を入れて「プログラム実行」ボタンをクリックしてください。<br>
           ボタンをクリックしたら計算結果が表示されましたか?<br>
           これはボタンをクリックした時に1番目の数値と2番目の数値を計算してその結果を表示してくださいと命令しています。<br>
           計算方法で「+」を選んだ場合はどうなりましたか?<br>

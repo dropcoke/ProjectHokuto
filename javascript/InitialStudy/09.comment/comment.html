@@ -22,54 +22,73 @@
     <header><a href="../index.html">&lt; 最初に戻る</a></header>
     <div>
       <h2>コメント</h2>
-      <p>処理をさせないようにします。</p>
+      <div>コメントを書くことでプログラムを実行させないようにします。</div>
     </div>
-    <div><button onclick="">プログラム実行</button></div>
     <div style="margin-top: 30px;">
-      ここでは実際に書いたプログラムを実行させないためのコメントについて説明します。<br />
-      <p>
+      ここでは実際に書いたプログラムを実行させないためのコメントについて説明します。<br>
+      <div>
         <h3>コンソールプログラム</h3>
         <div>
-          以下のプログラムを「comment.js」に書いてみましょう。<br />
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 60px;">
+          <div>
+            <textarea class="lined" id="program-area1" style="width: 600px; height: 100px;">
 // 1. コンソールに実行結果を表示します。
 // console.log('Hello World!');
 // console.log()は与えられた値をコンソールに出力します。
+/*
+こんな感じでコメントを複数行にわたって書くこともできます。
+*/
             </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          コンソールに何も表示されませんでしたか?<br />
-          console.log('Hello World!'); <br />
-          の処理の前に「// 」と書かれています。<br />
-          「// 」から後のプログラムは実行されません。<br />
-          行の途中であれば「// 」の前に書かれたプログラムは実行されます。<br />
-          今まで見てきたプログラムにも多くのこの「// 」が出てきましたよね。<br />
-          この記述はプログラムを(に)コメントするともいいます。<br />
-          実行させたくないプログラムの前に 「// 」を書くだけではなく <br />
-          プログラムの説明などを書くためにこのコメントを利用します。 <br />
-          「// 」は行単位で有効になり、次の行のプログラムは実行されます。<br />
-          また javascriptでは「// 」の他に「/*  */」で括られたものもコメントするといいます。<br />
-          「/* 」で始まったコメントは行を跨いで「 */」で閉じられるまでコメントとして有効になります。<br />
+          </div>
+          <div style="width: 600px;"><button id="btn-execute1" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header1" style="color: red;">
+              </div>
+              <div id="message1" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          コンソールに何も表示されませんでしたか?<br>
+          console.log('Hello World!'); <br>
+          の処理の前に「// 」と書かれています。<br>
+          「// 」から後のプログラムは実行されません。<br>
+          行の途中であれば「// 」の前に書かれたプログラムは実行されます。<br>
+          今まで見てきたプログラムにも多くのこの「// 」が出てきましたよね。<br>
+          この記述はプログラムを(に)コメントするともいいます。<br>
+          実行させたくないプログラムの前に 「// 」を書くだけではなく <br>
+          プログラムの説明などを書くためにこのコメントを利用します。 <br>
+          「// 」は行単位で有効になり、次の行のプログラムは実行されます。<br>
+          また javascriptでは「// 」の他に「/*  */」で括られたものもコメントするといいます。<br>
+          「/* 」で始まったコメントは行を跨いで「 */」で閉じられるまでコメントとして有効になります。<br>
           複数行のコメントを書きたい場合は「/*    */」を利用してください。
-          <p>
-            <textarea class="lined" readonly style="width: 600px; height: 60px;">
+          <div>
+            <textarea class="lined" id="program-area2" style="width: 600px; height: 60px;">
 // 1. コンソールに実行結果を表示します。
 console.log('コメントの前に書きました'); // console.log('Hello World!');
 // console.log()は与えられた値をコンソールに出力します。
             </textarea>
-          </p>
-          <div><button onclick="">プログラム実行</button></div>
-          プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-          コメントの前のプログラムは実行されましたか?<br />
+          </div>
+          <div style="width: 600px;"><button id="btn-execute2" style="float: right;">プログラム実行</button></div>
+          <br>
+          <div>
+            <p>
+              <div id="error-header2" style="color: red;">
+              </div>
+              <div id="message2" style="color: red;">
+              </div>
+            </p>
+          </div>
+          「プログラム実行」ボタンをクリックしてください。<br>
+          コメントの前のプログラムは実行されましたか?<br>
         </div>
-      </p>
+      </div>
       <b>コメントを有効に使ってわかりやすいプログラムを書きましょう!</b>
     </div>
     <!-- <div style="margin: 20px;">
-      <a id="html">HTMLのbodyの内容</a><br />
-      <textarea class="lined"  id="body" style="width: 800px;height: 600px;" readonly></textarea>
+      <a id="html">HTMLのbodyの内容</a><br>
+      <textarea class="lined"  id="body" style="width: 800px;height: 600px;" id="program-area"></textarea>
     </div> -->
     <footer><a href="../index.html">&lt; 最初に戻る</a></footer>
   </body>

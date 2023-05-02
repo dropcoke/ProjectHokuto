@@ -24,22 +24,21 @@
       <!-- 背景色設定する場所 -->
       <div id="result" style="font-size: 2rem; width: 320px; height: 420px; text-align: center; border: solid 1px;" >
       </div>
-      <!-- ラッキーカラーを取得するためのボタン -->
-      <button id="get-color" onclick="getLuckyColor()">ボーダー色作成?</button>
     </div>
 
     <div style="margin-top: 10px">
-      以下のプログラムを「luckycolor.js」に書いてみましょう。<br />
-      <p>
-        <textarea class="lined" readonly style="width: 700px; height: 800px;">
-// クリック回数
-let term = 0;
-// クリック回数上限
-const maxTerm = 20;
-// 取得した値の最大値からランダムな整数を返します
-const getRandomInt = (max) => {
-    return Math.floor(Math.random() * max);
-}
+      <div>
+        <div style="width: 320px;"><button id="btn-execute1" style="float: right;">プログラム実行</button></div>
+        <br>
+        <div>
+          <p>
+            <div id="error-header1" style="color: red;">
+            </div>
+            <div id="message1" style="color: red;">
+            </div>
+          </p>
+        </div>
+        <textarea class="lined" id="program-area1" style="width: 700px; height: 600px;">
 // 色名を配列に格納します
 // const colorName = ["青", "緑", "赤", "灰色", "紫", "ピンク"];
 // 色を配列に格納します (要素数は色名と同じ数にしてください。)
@@ -48,18 +47,6 @@ const getRandomInt = (max) => {
 const color = ["blue", "green", "red", "gray", "purple", "pink"];
 // 横縞カラー出力
 const getLuckyColor = () => {
-    // 色を出力するパネルを取得します
-    const panel = document.getElementById("result");
-    // 上限になったらクリック回数を初期化する
-    if (term === maxTerm) {
-        alert("クリック回数を初期化します。");
-        term = 0;
-        // パネルの中身を消す
-        panel.innerHTML = "";
-        panel.textContent = "初期化しました";
-        return;
-    }
-    term++;
     // 領域内に出力するhtml
     let elements = "";
     // 前の色番号
@@ -83,20 +70,18 @@ const getLuckyColor = () => {
         elements += '<div style="width: 100%; background:' + color[temp] + '; height:  5px;"></div>'
     }
     // パネルの中にhtmlを追加
-    panel.innerHTML = elements;
-
+    showContents(elements);
 }
-        </textarea>
-      </p>
-      <div><button onclick="">プログラム実行</button></div>
-      プログラムを書いたらファイルを保存して「プログラム実行」ボタンをクリックしてください。<br />
-      このプログラムは配列に格納した色をランダムで取り出して画面に並べていきます。<br />
-      同じ色が重ならないように前の色と今回の色が同じ色の場合は繰り返しの処理をスキップします。<br />
-      コマンド(関数)「getRandomInt」では0から配列の要素数から任意の数値を取り出しています。<br />
-      getRandomIntで取得した場所の配列の要素にある色をボーダーの一つとして構成します。<br />
-      繰り返しの処理でボーダーとして設定する領域を作っていきます。<br />
-      繰り返しが終わったら、ボーダーを表示します。<br />
-      クリック回数の上限になったら、警告を出して表示領域を初期化します。<br />
+// ボーダー描画
+getLuckyColor();</textarea>
+      </div>
+      「プログラム実行」ボタンをクリックしてください。<br>
+      このプログラムは配列に格納した色をランダムで取り出して画面に並べていきます。<br>
+      同じ色が重ならないように前の色と今回の色が同じ色の場合は繰り返しの処理をスキップします。<br>
+      コマンド(関数)「getRandomInt」では配列の要素数から任意の数値を取り出しています。<br>
+      getRandomIntで取得した場所の配列の要素にある色をボーダーの一つとして構成します。<br>
+      繰り返しの処理でボーダーとして設定する領域を作っていきます。<br>
+      繰り返しが終わったら、ボーダーを表示します。<br>
       <b>ボーダーにいろんな色を追加してみよう。</b>
     </div>
   </body>
