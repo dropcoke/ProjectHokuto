@@ -26,11 +26,14 @@ $(() => {
     });
     blockNavi = BlockNavi;
     blockNavi.outputArea = document.getElementById('output-area');
-
     // テーブルサイズ
     const tableSize = {y: 7, x: 7};
     blockNavi.drawTable(tableSize);
     drawRouteFirst();
+    // カーソルキー移動
+    window.addEventListener('keydown', (e) => {
+        blockNavi.onArrowKey(e);
+    });
 });
 
 

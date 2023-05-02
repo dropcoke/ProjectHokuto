@@ -396,5 +396,44 @@ const BlockNavi = {
         this.selectedCell = {y: y, x: x};
         this.getSelectedElement().style.background = 'aliceblue';
         this.isSelected = true;
+    },
+    onArrowKey(e) {
+        // 矢印移動
+        if (blockNavi.isSelected) {
+            const position = blockNavi.selectedCell;
+            let y = position.y;
+            let x = position.x;
+            if (e.code == 'ArrowUp') {
+                y = y - 1
+                if (y < 0) {
+                    return;
+                }
+            }
+            else if (e.code == 'ArrowDown') {
+                y = y + 1;
+                if (y > this.route.length) {
+                    return;
+                }
+            }
+            else if (e.code == 'ArrowRight') {
+                x = x + 1;
+                if (x > this.route[y].length) {
+                    return;
+                }
+            }
+            else if (e.code == 'ArrowLeft') {
+                x = x - 1;
+                if (x < 0) {
+                    return;
+                }
+            }
+            if (!this.route[y]) {
+                return;
+            }
+            else if (!this.route[y][x]) {
+                return;
+            }
+            this.changeSelectElement(y, x);
+        }
     }
 }

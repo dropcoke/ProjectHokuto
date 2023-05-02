@@ -30,6 +30,10 @@ $(() => {
     const tableSize = {y: 7, x: 7};
     blockNavi.drawTable(tableSize);
     drawRouteSecond();
+    // カーソルキー移動
+    window.addEventListener('keydown', (e) => {
+        blockNavi.onArrowKey(e);
+    });
 });
 
 
