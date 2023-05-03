@@ -44,11 +44,13 @@
                 </div>
                 <div style="width: 500px;">
                     <textarea class="lined" id="program-area" style="width: 500px; height: 380px;">
-for (let i = 1; i <= 3; i++) {
+let i = 1;
+while (i <= 3) {
     moveForward();
     if(i == 3) {
         turnRight();
     }
+    i = i + 1
 }</textarea>
                 </div>
                 <div style="width: 500px; height: 50px;">
@@ -60,6 +62,19 @@ for (let i = 1; i <= 3; i++) {
             </div>
             <div class="col" style="max-width: 600px">
                 <div id="output-area"></div>
+            </div>
+            <div>
+                繰り返しをする処理にはwhileの他にforを使うこともできます。<br>
+                以下の例は初期状態に書かれてるプログラムと同じ動きをします。
+                <pre>
+例)
+for (let i = 1; i <= 3; i++) {
+    moveForward();
+    if(i == 3) {
+        turnRight();
+    }
+}
+                </pre>
             </div>
         </div>
     </main>
