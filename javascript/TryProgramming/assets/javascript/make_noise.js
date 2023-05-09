@@ -117,7 +117,7 @@ const playB2 = () => {
 }
 const playC3 = () => {
     startSound(sound, 22, noteLength);
-    playMySynth.markNote(3, 0, noteLength);
+    playMySynth.markNote(6, 0, noteLength);
 }
 const playD3 = () => {
     startSound(sound, 23, noteLength);
@@ -203,7 +203,7 @@ const onB2 = () => {
 }
 const onC3 = () => {
     playMySynth.startSound(sound, 22);
-    playMySynth.markNote(3, 0);
+    playMySynth.markNote(6, 0);
 }
 const onD3 = () => {
     playMySynth.startSound(sound, 23);
