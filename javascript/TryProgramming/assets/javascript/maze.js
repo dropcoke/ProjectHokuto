@@ -393,7 +393,7 @@ const BlockNavi = {
             }
         }
         this.selectedCell = {y: y, x: x};
-        this.getSelectedElement().style.background = 'aliceblue';
+        this.getSelectedElement().style.background = 'wheat';
         this.isSelected = true;
     },
     onArrowKey(e) {
