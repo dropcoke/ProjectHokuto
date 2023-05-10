@@ -34,6 +34,17 @@ $(() => {
     window.addEventListener('keydown', (e) => {
         blockNavi.onArrowKey(e);
     });
+     // カーソルキー移動
+     document.getElementById('program-area').addEventListener('keydown', (e) => {
+        if (e.code === 'Tab') {
+            e.preventDefault();
+            const area = e.target;
+            const currentPosition = area.selectionStart;
+            const text = '    ';
+            area.value = area.value.substr(0, area.selectionStart) + text + area.value.substr(area.selectionStart);
+            area.setSelectionRange(currentPosition + text.length, currentPosition + text.length);
+        }
+    });
 });
 
 
